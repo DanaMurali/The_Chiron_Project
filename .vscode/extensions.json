@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ms-vscode.vscode-typescript-next",
+    "graphql.vscode-graphql",
+    "graphql.vscode-graphql-syntax",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "hediet.vscode-drawio",
+    "shd101wyy.markdown-preview-enhanced"
+  ]
+}

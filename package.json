@@ -12,7 +12,9 @@
   },
   "engines": {
     "npm": "please-use-pnpm",
-    "yarn": "please-use-pnpm"
+    "yarn": "please-use-pnpm",
+    "node": ">=v16.13.2",
+    "pnpm": ">= 7.11.0"
   },
   "keywords": [],
   "author": "",
