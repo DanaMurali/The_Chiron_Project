@@ -9,7 +9,7 @@
   "plugins": ["@typescript-eslint"],
   "root": true,
   "parserOptions": {
-    "tsconfigRootDir": "the_chiron_project",
-    "project": []
+    "tsconfigRootDir": ".",
+    "project": ["./server/tsconfig.json"]
   }
 }
