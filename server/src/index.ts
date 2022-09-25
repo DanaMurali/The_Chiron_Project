@@ -5,7 +5,7 @@ import { typeDefs } from './schema';
 
 // const MONGO_DB_URL = 'mongodb://localhost/{databaseName}';
 
-async function bootstrap() {
+const bootstrap = async () => {
   try {
     // connect to MongoDb database
     // await connect(MONGO_DB_URL); // ? potentially use datasources
@@ -24,6 +24,6 @@ async function bootstrap() {
     console.log(error);
     process.exit(1);
   }
-}
+};
 
 bootstrap();
