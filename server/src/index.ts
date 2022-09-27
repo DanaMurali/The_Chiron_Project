@@ -1,14 +1,16 @@
 import { ApolloServer } from 'apollo-server';
+import 'dotenv/config';
 
 import { resolvers } from './resolvers/index';
 import { typeDefs } from './schema';
 
-// const MONGO_DB_URL = 'mongodb://localhost/{databaseName}';
+// const MONGO_DB_URL = process.env.MONGO_DB_URL;
+
+const PORT = process.env.PORT || 4000;
 
 const bootstrap = async () => {
   try {
-    // connect to MongoDb database
-    // await connect(MONGO_DB_URL); // ? potentially use datasources
+    // await connect(MONGO_DB_URL)
     // console.log("Connected to Database");
 
     const server = new ApolloServer({
@@ -18,7 +20,7 @@ const bootstrap = async () => {
       cache: 'bounded',
     });
 
-    const { url } = await server.listen();
+    const { url } = await server.listen(PORT);
     console.log(`🚀 Server ready at ${url}`);
   } catch (error) {
     console.log(error);
