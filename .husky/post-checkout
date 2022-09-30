@@ -7,4 +7,3 @@ if [[ $PACKAGES ]]; then
   echo "📦 $PACKAGES was changed. Running pnpm install to update your dependencies..."
   pnpm install
 fi
-
