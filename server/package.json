@@ -2,7 +2,7 @@
   "name": "server",
   "version": "0.0.0",
   "description": "",
-  "exports": "./src/index.js",
+  "private": true,
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
