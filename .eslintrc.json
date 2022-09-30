@@ -6,10 +6,5 @@
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "root": true,
-  "parserOptions": {
-    "tsconfigRootDir": ".",
-    "project": ["./server/tsconfig.json"]
-  }
+  "plugins": ["@typescript-eslint"]
 }
