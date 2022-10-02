@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/server/src",
+  "projectType": "application",
+  "targets": {
+    "dev": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "ts-node-dev --respawn --transpile-only apps/server/src/index.ts"
+          }
+        ]
+      }
+    }
+  }
+}
