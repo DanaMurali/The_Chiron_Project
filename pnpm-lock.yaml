@@ -4,6 +4,9 @@ importers:
 
   .:
     specifiers:
+      '@babel/core': ^7.19.3
+      '@babel/preset-typescript': ^7.18.6
+      '@babel/runtime': ^7.19.0
       '@nrwl/cli': 14.8.2
       '@nrwl/cypress': 14.8.2
       '@nrwl/eslint-plugin-nx': 14.8.2
@@ -26,6 +29,7 @@ importers:
       apollo-datasource-mongodb: ^0.5.4
       apollo-server: ^3.10.2
       babel-jest: 28.1.1
+      babel-loader: ^8.2.5
       babel-plugin-styled-components: 1.10.7
       class-validator: ^0.13.2
       core-js: ^3.6.5
@@ -61,10 +65,14 @@ importers:
       tslib: ^2.3.0
       typescript: ~4.8.2
     dependencies:
+      '@babel/core': 7.19.3
+      '@babel/preset-typescript': 7.18.6_@babel+core@7.19.3
+      '@babel/runtime': 7.19.0
       '@nrwl/next': 14.8.2_et656awn2hsigatxqaww3ze7sm
       '@typegoose/typegoose': 9.12.0_mongoose@6.6.1
       apollo-datasource-mongodb: 0.5.4_cldsjwzoalbg4ivcbscq6epupe
       apollo-server: 3.10.2_graphql@16.6.0
+      babel-loader: 8.2.5_wfdvla2jorjoj23kkavho2upde
       class-validator: 0.13.2
       core-js: 3.25.4
       graphql: 16.6.0
