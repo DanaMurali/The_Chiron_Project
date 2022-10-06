@@ -11,7 +11,12 @@ module.exports = {
     ...createGlobPatternsForDependencies('apps/t3-client'),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        champagnePink: "#F1DCD4",
+        blackCoral: "#4C5C73",
+      },
+    },
   },
   plugins: [],
 };

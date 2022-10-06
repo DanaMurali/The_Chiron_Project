@@ -8,6 +8,8 @@ import type { AppType } from "next/app";
 import type { AppRouter } from "../server/router";
 import type { Session } from "next-auth";
 import "../styles/globals.css";
+import LandingPage from "../components/landing-page/landing-page";
+import { Layout } from "../components/layout/layout";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -15,7 +17,10 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      {/* <Component {...pageProps} /> */}
+      <Layout>
+      <LandingPage />
+      </Layout>
     </SessionProvider>
   );
 };
