@@ -5,8 +5,20 @@
 /tmp
 /out-tsc
 
+# production
+/build
+
 # dependencies
 node_modules
+/.pnp
+.pnp.js
+
+# database
+/prisma/db.sqlite
+/prisma/db.sqlite-journal
+
+# testing
+/coverage
 
 # IDEs and editors
 /.idea
@@ -37,7 +49,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+*.pem
 .env
+.env*.local
 
 # Next.js
 .next
+out
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
