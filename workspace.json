@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "client": "apps/client",
+    "t3-client": "apps/t3-client",
     "server": "apps/server"
   }
 }

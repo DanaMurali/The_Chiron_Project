@@ -1,0 +1,63 @@
+{
+  "name": "t3-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/t3-client",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/t3-client",
+        "outputPath": "dist/apps/t3-client"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/t3-client"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "t3-client:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "t3-client:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "t3-client:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "t3-client:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/t3-client"],
+      "options": {
+        "jestConfig": "apps/t3-client/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/t3-client/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
