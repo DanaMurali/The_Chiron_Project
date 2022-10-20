@@ -1,9 +1,11 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { trpc } from "../utils/trpc";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Body from 'next/head';
+import LandingPage from '../components/landing-page/landing-page';
+import { trpc } from '../utils/trpc';
 
 const Home: NextPage = () => {
-  const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
+  const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
 
   return (
     <>
@@ -13,6 +15,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         {/* <script src="https://cdn.tailwindcss.com"></script> */}
       </Head>
+      <Body>
+        <LandingPage />
+      </Body>
     </>
   );
 };
