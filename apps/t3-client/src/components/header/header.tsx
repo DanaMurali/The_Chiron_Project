@@ -1,24 +1,37 @@
-
-
 const Header = () => {
-    return (
-        <>
-        <div className="bg-champagnePink flex justify-between h-[85px] items-center">
-            <div>
-                LOGO!
-            </div>
-            <div className="w-1/2">
-                <ul className="flex flex-row justify-evenly text-xl">
-                    <li>home</li>
-                    <li>about</li>
-                    <li>testimonials</li>
-                    <li>contact</li>
-                </ul>
-            </div>
+  return (
+    <>
+      {/* <!-- Navbar --> */}
+      <nav className="bg-headerPink  relative mx-auto p-4">
+        {/* <!-- Flex container --> */}
+        <div className="flex items-center justify-between">
+          {/* <!-- Logo --> */}
+          <div className="pt2">
+            {/* <!-- <img src="img/logo.svg" alt=""> --> */}
+            <h1 className="">LOGO</h1>
+          </div>
+          {/* <!-- Menu Items --> */}
+          <div className="hidden space-x-8 md:flex">
+            <a href="#" className="hover:text-hoverTeal">
+              home
+            </a>
+            <a href="#" className="hover:text-hoverTeal">
+              about
+            </a>
+            <a href="#" className="hover:text-hoverTeal">
+              testimonials
+            </a>
+            <a href="#" className="hover:text-hoverTeal">
+              contact
+            </a>
+          </div>
         </div>
-        <div className="bg-blackCoral h-[22px]"></div>
-        </>
-    )
+      </nav>
+      <nav className="bg-blackCoral  relative mx-auto p-2">
+        {/* <!-- just to have two colours for navbar--> */}
+      </nav>
+    </>
+  );
 };
 
-export default Header; 
+export default Header;
