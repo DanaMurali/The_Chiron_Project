@@ -3,12 +3,16 @@ import ProfileCard from './profile-card/profile-card';
 
 const SearchPage = () => {
   return (
-    <div>
-      <h2>Find A Mentor</h2>
+    <div className="mx-[40px] flex w-screen flex-col">
+      <h2 className="my-[40px] font-bold">Find A Mentor</h2>
       <div>
-        <div>
-          <button>Mentors</button>
-          <button>Mentees</button>
+        <div className="flex flex-row">
+          <button className="w-[152px] rounded border border-black py-0.5">
+            Mentors
+          </button>
+          <button className="w-[152px] rounded border border-black py-0.5">
+            Mentees
+          </button>
         </div>
         <SearchBar />
       </div>
