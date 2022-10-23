@@ -17,3 +17,5 @@ export default Footer;
 
 // to do
 // check spacing works okay with image
+// use next/img 
+// add key in footer-list iterator 
