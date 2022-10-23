@@ -11,6 +11,10 @@ module.exports = {
     ...createGlobPatternsForDependencies('apps/t3-client'),
   ],
   theme: {
+    screens: {
+      'tinyMobile': '320px',
+      'smallMobile': '480px'
+    },
     extend: {
       colors: {
         champagnePink: "#F1DCD4",
