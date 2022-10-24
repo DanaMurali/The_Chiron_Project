@@ -33,11 +33,11 @@ const footerDataLinks = [
 
 const FooterList = () => {
   return (
-    <div className="flex flex-row  pl-5 lg:min-w-[775px] items-center border-2">
+    <div className="flex flex-wrap justify-center md:w-2/3">
       {footerDataLinks &&
         footerDataLinks.map(({ title, items }) => (
-          <div className="mb-5 mr-[60px] smallMobile:min-w-20">
-            <h4 className="mb-5"> {title}</h4>
+          <div className="min-w-[150px] lg:mr-10">
+            <h4 className="mb-5 mt-5 md:mt-0" key={title}>{title}</h4>
             <ul className="font-thin leading-8">
               <li>{items.one}</li>
               <li>{items.two}</li>

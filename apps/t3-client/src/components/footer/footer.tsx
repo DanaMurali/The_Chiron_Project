@@ -1,21 +1,17 @@
+import { footerLogoColumn } from '../../mock-data/footer-data';
 import FooterLeft from './footer-left';
 import FooterList from './footer-list';
 
 const Footer = () => {
   return (
-    <footer className="bg-blackCoral min-h-28 relative bottom-0 max-h-[500px] w-full p-10 text-white">
-      <div className=" flex flex-wrap justify-around text-center sm:items-center">
-        <FooterLeft />
+    <footer className="bg-blackCoral min-h-28 relative w-full p-10 text-white">
+      <div className="flex justify-around flex-wrap text-center items-center">
+        <FooterLeft footerLogoColumn={footerLogoColumn}/>
         <FooterList />
       </div>
-      <p className="text-center font-thin">© the Chiron project</p>
+      <p className="text-center font-thin mt-3">© the Chiron project</p>
     </footer>
   );
 };
 
 export default Footer;
-
-// to do
-// check spacing works okay with image
-// use next/img 
-// add key in footer-list iterator 

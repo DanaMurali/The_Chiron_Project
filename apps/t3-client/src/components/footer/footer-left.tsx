@@ -1,21 +1,18 @@
-const footerLogoColumn = {
-  logo: 'logo here!',
-  text: 'Building Digital Products, Brands & Experiences',
-};
+// const footerLogoColumn = {
+//   logo: 'https://picsum.photos/100',
+//   text: 'Building Digital Products, Brands & Experiences',
+// };
 
-const FooterLeft = () => {
+const FooterLeft = (footerLogoColumn: any) => {
+  console.log(footerLogoColumn, '<< footerLogoColumn')
   return (
-    <div className="tinyMobile:mb-6 min-w-60 max-w-[600px] flex-1 p-2">
-      {/* <span>{footerLogoColumn.logo}</span> */}
+    <div className="flex flex-col md:justify-center md:w-1/3 py-2 items-center">
       <span className="">
-        <img src="https://picsum.photos/200" alt="" className="self-end" />
+        <img src={footerLogoColumn.logo} alt="" className="mb-2" />
       </span>
-      <p className="max-w-52 font-thin">{footerLogoColumn.text}</p>
+      <p className="font-thin max-w-[200px]">{footerLogoColumn.text}</p>
     </div>
   );
 };
 
 export default FooterLeft;
-
-// center image 
-// figure out why config changes break main page code 
