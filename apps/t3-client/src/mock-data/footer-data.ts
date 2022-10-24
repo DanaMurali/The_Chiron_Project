@@ -1,18 +1,23 @@
-export const footerLogoColumn = {
-  logo: 'string - logo here ',
+export const footerLogoData = {
+  logo: 'https://picsum.photos/100',
   text: 'Building Digital Products, Brands & Experiences',
 };
 
-export type footerDataType = Array<{
+export type footerLogoData = {
+  logo: string;
+  text: string;
+};
+
+export type footerDataType = {
   columnNumber?: number;
-  title?: string;
+  title: string;
   items: {
     one?: string;
     two?: string;
     three?: string;
     four?: string;
   };
-}>;
+}[];
 
 export const footerDataLinks = [
   {

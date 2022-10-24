@@ -1,16 +1,12 @@
-// const footerLogoColumn = {
-//   logo: 'https://picsum.photos/100',
-//   text: 'Building Digital Products, Brands & Experiences',
-// };
+import type { footerLogoData } from '../../mock-data/footer-data';
 
-const FooterLeft = (footerLogoColumn: any) => {
-  console.log(footerLogoColumn, '<< footerLogoColumn')
+const FooterLeft = ({ logo, text }: footerLogoData) => {
   return (
-    <div className="flex flex-col md:justify-center md:w-1/3 py-2 items-center">
+    <div className="flex flex-col items-center py-2 md:w-1/3 md:justify-center">
       <span className="">
-        <img src={footerLogoColumn.logo} alt="" className="mb-2" />
+        <img src={logo} alt="" className="mb-2" />
       </span>
-      <p className="font-thin max-w-[200px]">{footerLogoColumn.text}</p>
+      <p className="max-w-[200px] font-thin">{text}</p>
     </div>
   );
 };
