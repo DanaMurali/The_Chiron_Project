@@ -13,15 +13,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        champagnePink: "#F1DCD4",
-        blackCoral: "#4C5C73",
-        headerPink: "#FFEEDD",
-        sectionPink: "#FFF9F3",
-        mediumGreen: "#B1C9C9",
-        hoverTeal: "#194F7F",
-        textGrey: "#BABABA",
-        white: "#FFFFFF",
-        black: "#272D38"
+        champagnePink: '#F1DCD4',
+        blackCoral: '#4C5C73',
+        headerPink: '#FFEEDD',
+        sectionPink: '#FFF9F3',
+        mediumGreen: '#B1C9C9',
+        hoverTeal: '#194F7F',
+        textGrey: '#BABABA',
+        white: '#FFFFFF',
+        black: '#272D38',
       },
     },
   },
