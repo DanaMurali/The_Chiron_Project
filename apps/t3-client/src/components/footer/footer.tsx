@@ -1,7 +1,17 @@
+import { footerLogoData } from '../../mock-data/footer-data';
+import FooterLeft from './footer-left';
+import FooterList from './footer-list';
+
 const Footer = () => {
-    return (
-        <footer className="bg-blackCoral absolute bottom-0 w-full text-white h-[100px]">this will be a footer!</footer>
-    )
+  return (
+    <footer className="bg-blackCoral min-h-28 relative w-full p-10 text-white">
+      <div className="flex flex-wrap items-center justify-around text-center">
+        <FooterLeft {...footerLogoData} />
+        <FooterList />
+      </div>
+      <p className="mt-3 text-center font-thin">© the Chiron project</p>
+    </footer>
+  );
 };
 
-export default Footer; 
+export default Footer;
