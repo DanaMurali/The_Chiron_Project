@@ -11,7 +11,9 @@ const SearchPage = () => {
   };
   return (
     <div className="mx-[40px] flex w-screen flex-col">
-      <h2 className="my-[40px] self-center font-bold">Find A Mentor</h2>
+      <h2 className="font-[2rem] my-[40px] self-center font-bold">
+        Find A Mentor
+      </h2>
       <div className="flex-column flex items-center justify-between ">
         <div className="flex flex-row">
           <button
