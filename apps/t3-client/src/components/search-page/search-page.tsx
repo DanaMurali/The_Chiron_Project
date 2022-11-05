@@ -10,17 +10,17 @@ const SearchPage = () => {
     setIsTabSelected(tabName);
   };
   return (
-    <div className="mx-[40px] flex w-screen flex-col">
-      <h2 className="my-[40px] self-center text-[2rem] font-bold">
+    <div className="flex h-screen  w-full flex-col px-[1.5rem] md:px-[2.5rem]">
+      <h2 className="my-[2.5rem] self-center text-[2rem] font-bold">
         Find A Mentor
       </h2>
-      <div className="flex-column flex items-center justify-between ">
-        <div className="flex flex-row">
+      <div className="mb-2 flex flex-col-reverse items-center justify-between md:flex-row">
+        <div className="mt-2 flex flex-row md:mt-0">
           <button
             className={
               isTabSelected === 'Mentors'
-                ? 'bg-sectionPink w-[152px] rounded border border-black py-0.5'
-                : 'w-[152px] rounded border border-black py-0.5'
+                ? 'bg-sectionPink w-[7rem] rounded border border-black py-0.5 md:w-[9.5rem]'
+                : 'w-[7rem] rounded border border-black py-0.5 md:w-[9.5rem]'
             }
             onClick={() => handleTabOnClick('Mentors')}
           >
@@ -29,8 +29,8 @@ const SearchPage = () => {
           <button
             className={
               isTabSelected === 'Mentees'
-                ? 'bg-sectionPink w-[152px] rounded border border-black py-0.5'
-                : 'w-[152px] rounded border border-black py-0.5'
+                ? 'bg-sectionPink w-[7rem] rounded border border-black py-0.5 md:w-[9.5rem]'
+                : 'w-[7rem] rounded border border-black py-0.5 md:w-[9.5rem]'
             }
             onClick={() => handleTabOnClick('Mentees')}
           >
@@ -39,7 +39,7 @@ const SearchPage = () => {
         </div>
         <SearchBar />
       </div>
-      <div className="bg-sectionPink">
+      <div className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start">
         <ProfileCard />
       </div>
     </div>
