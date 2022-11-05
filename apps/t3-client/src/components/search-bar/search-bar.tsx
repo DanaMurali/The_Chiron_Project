@@ -7,7 +7,7 @@ const SearchBar = () => {
     console.log(searchValue);
   };
   return (
-    <div className="mr-16 flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="xl:w-96">
         <div className="input-group row bg-blackCoral relative flex w-full items-stretch rounded-lg p-1">
           <input
