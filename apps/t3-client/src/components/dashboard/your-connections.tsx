@@ -1,12 +1,35 @@
 import { useState } from 'react';
-import ProfileCard from '../search-page/profile-card/profile-card';
+
 import ListColumn from './list-column';
 
 const YourConnections = () => {
+  const [isMentorsTabSelected, setIsMentorsTabSelected] = useState(true);
+
+  const activeMenteesTab = () => {
+    setIsMentorsTabSelected(false);
+  };
+
+  const activeMentorsTab = () => {
+    setIsMentorsTabSelected(true);
+  };
+
   return (
-    <section className="flex min-h-[100vh] w-full flex-wrap text-center">
-      <ListColumn isMentors />
-      <ListColumn />
+    <section className="mx-auto mb-10 flex min-h-[38.5rem] w-4/5 flex-wrap text-center">
+      <div className="flex w-full">
+        <button
+          onClick={activeMenteesTab}
+          className="bg-mediumGreen min-h-[5rem] w-full rounded-t text-2xl"
+        >
+          Mentors
+        </button>
+        <button
+          onClick={activeMentorsTab}
+          className="bg-sectionPink w-full rounded-t text-2xl"
+        >
+          Mentees
+        </button>
+      </div>
+      {isMentorsTabSelected ? <ListColumn isMentors /> : <ListColumn />}
     </section>
   );
 };

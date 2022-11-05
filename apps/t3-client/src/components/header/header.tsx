@@ -28,6 +28,9 @@ const Header = () => {
             <a href="#" className="hover:text-hoverTeal">
               contact
             </a>
+            <a href="/dashboard" className="hover:text-hoverTeal">
+              dashboard
+            </a>
           </div>
         </div>
       </nav>

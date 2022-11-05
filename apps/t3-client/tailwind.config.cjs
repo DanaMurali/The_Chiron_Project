@@ -23,6 +23,7 @@ module.exports = {
         white: '#FFFFFF',
         black: '#272D38',
         darkPink: '#a6457f',
+        orange: '#db7600',
       },
     },
     screens: {
