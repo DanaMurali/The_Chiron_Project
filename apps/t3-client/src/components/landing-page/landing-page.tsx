@@ -39,8 +39,8 @@ export default function LandingPage() {
               src="/images/landing-page/activity.png"
               className="-mt-14 w-16"
               alt=""
-              height="400px"
-              width="500px"
+              height="420px"
+              width="600px"
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function LandingPage() {
             {/* Logos Container */}
             <div className="border-blackCoral mt-10 flex flex-col border-8 md:flex-row md:space-x-6">
               {/* Logo 1 */}
-              <div className="flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
+              <div className="m-10 flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/stark.png"
                   className="-mt-14 w-16"
@@ -68,7 +68,7 @@ export default function LandingPage() {
                 />
               </div>
               {/* Logo 2 */}
-              <div className="flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
+              <div className="m-10 flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/monster.png"
                   className="-mt-14 w-16"
@@ -78,7 +78,7 @@ export default function LandingPage() {
                 />
               </div>
               {/* Logo 3 */}
-              <div className="flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
+              <div className="m-10 flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/wayne.png"
                   className="-mt-14 w-16"
@@ -88,7 +88,7 @@ export default function LandingPage() {
                 />
               </div>
               {/* Logo 4 */}
-              <div className="flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
+              <div className="m-10 flex flex-col items-center space-y-6 rounded-lg bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/umbrella.png"
                   className="-mt-14 w-16"
@@ -109,11 +109,11 @@ export default function LandingPage() {
           {/* <!-- Left Item - Image --> */}
           <div className="bg-mediumGreen flex flex-col items-center space-y-12 rounded-lg p-3 px-6 py-6 md:w-1/2">
             <Image
-              src="/images/landing-page/activity.png"
+              src="/images/landing-page/steps.png"
               className="-mt-14 w-16"
               alt=""
               height="400px"
-              width="500px"
+              width="600px"
             />
           </div>
 
@@ -141,7 +141,7 @@ export default function LandingPage() {
       {/* <!-- Mentoring Events --> */}
       <section id="mentoring-events">
         {/* <!-- Flex Container --> */}
-        <div className="bg-sectionPink container mx-auto  mt-10 flex flex-col-reverse items-center items-stretch space-y-0 px-6 py-6 md:flex-row md:space-y-0">
+        <div className="bg-sectionPink container mx-auto  mt-10 flex flex-col items-center items-stretch space-y-0 px-6 py-6 md:flex-row md:space-y-0">
           {/* <!-- mt-10 -->
             <!-- Left Item --> */}
           <div className="flex flex-col items-center space-y-12 rounded-lg  bg-white p-3 md:w-1/2 ">
@@ -187,7 +187,7 @@ export default function LandingPage() {
             {/* Testimonials Container */}
             <div className="mt-10 flex flex-col md:flex-row md:space-x-6">
               {/* Testimonial 1 */}
-              <div className="border-blackCoral flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
+              <div className="border-blackCoral mb-10 flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/jonathon.png"
                   className="-mt-14 w-16"
@@ -201,7 +201,7 @@ export default function LandingPage() {
                 </p>
               </div>
               {/* Testimonial 2 */}
-              <div className="border-blackCoral flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
+              <div className="border-blackCoral mb-10 flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/darania.png"
                   className="-mt-14 w-16"
@@ -211,11 +211,12 @@ export default function LandingPage() {
                 />
                 <h5 className="text-lg font-bold">Darania Muralitharan</h5>
                 <p className="text-smm">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Iste dolores commodi doloribus, unde sint quo eligendi
+                  consequatur obcaecati?
                 </p>
               </div>
               {/* Testimonial 3 */}
-              <div className="border-blackCoral flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
+              <div className="border-blackCoral mb-10 flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/jordan.png"
                   className="-mt-14 w-16"
@@ -225,11 +226,12 @@ export default function LandingPage() {
                 />
                 <h5 className="text-lg font-bold">Jordan Smith</h5>
                 <p className="text-smm">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Voluptatibus provident recusandae esse laudantium expedita
+                  commodi temporibus odio corrupti illo eveniet.
                 </p>
               </div>
               {/* Testimonial 4 */}
-              <div className="border-blackCoral flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
+              <div className="border-blackCoral mb-10 flex flex-col items-center space-y-6 rounded-lg border-8 bg-white p-6 md:w-1/3">
                 <Image
                   src="/images/landing-page/rose.png"
                   className="-mt-14 w-16"
@@ -239,7 +241,8 @@ export default function LandingPage() {
                 />
                 <h5 className="text-lg font-bold">Rose Tanner</h5>
                 <p className="text-smm">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                  qui officia deserunt mollit anim id est laborum.
                 </p>
               </div>
             </div>
@@ -249,14 +252,35 @@ export default function LandingPage() {
 
       {/* Be a part of the next big thing */}
       <section id="testimonials">
-        <div className="bg-sectionPink container mx-auto mt-10 px-6 py-6">
-          {/* Container to heading and testimonials */}
+        <div className="bg-sectionPink container mx-auto mt-10 mb-10 px-6 py-6">
+          {/* Container to heading */}
           <div className="mx-auto max-w-6xl px-5 text-center">
             <h2 className="text-center text-4xl font-bold">
               Be A Part Of The Next Big Thing
             </h2>
-            {/* Testimonials Container */}
-            <div className="mt-10 flex flex-col md:flex-row md:space-x-6"></div>
+            <h5 className="p-6 text-center">
+              We work with Brands, Startups, to SMEs. Collaborate for more
+              impact and growth.
+            </h5>
+          </div>
+          {/* button container */}
+          <div className="mx-auto flex flex-col items-center rounded-lg p-3 px-6 py-6 pt-6">
+            <a
+              href="#"
+              className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white"
+            >
+              Contact Us
+            </a>
+          </div>
+          {/* Image Container */}
+          <div className="bg-mediumGreen mx-auto flex flex-col items-center  rounded-lg p-3 px-6 py-6 ">
+            <Image
+              src="/images/landing-page/people.png"
+              className="-mt-14 w-16"
+              alt=""
+              height="300px"
+              width="800px"
+            />
           </div>
         </div>
       </section>
