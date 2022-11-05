@@ -22,6 +22,7 @@ module.exports = {
         textGrey: '#BABABA',
         white: '#FFFFFF',
         black: '#272D38',
+        darkPink: '#a6457f',
       },
     },
     screens: {
