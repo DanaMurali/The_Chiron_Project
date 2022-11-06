@@ -7,7 +7,7 @@ type Props = {
 const ListColumn = ({ isMentors }: Props) => {
   return (
     <div
-      className={`flex min-w-[100%] flex-wrap items-center justify-center rounded-b-md px-2 pb-4 ${
+      className={`flex min-w-[100%] flex-wrap items-center justify-center rounded-b-md px-2 py-4 ${
         isMentors ? 'bg-sectionPink' : 'bg-mediumGreen'
       }`}
     >

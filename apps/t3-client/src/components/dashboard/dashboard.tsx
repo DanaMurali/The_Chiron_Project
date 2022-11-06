@@ -15,7 +15,7 @@ const DashboardPage = ({ newRequest }: Props) => {
       <div className={`${newRequest ?? 'mt-10'}`}>
         <DisplayCard
           data={mockData}
-          img="https://i.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o"
+          img="https://picsum.photos/1000"
           editButton
         />
       </div>
