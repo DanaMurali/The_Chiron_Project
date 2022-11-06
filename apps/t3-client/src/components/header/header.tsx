@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Header = () => {
   return (
     <>
@@ -8,7 +10,9 @@ const Header = () => {
           {/* <!-- Logo --> */}
           <div className="pt2">
             {/* <!-- <img src="img/logo.svg" alt=""> --> */}
-            <h1 className="">LOGO</h1>
+            <h1 className="">
+              <Link href="/">LOGO</Link>
+            </h1>
           </div>
           {/* <!-- Menu Items --> */}
           <div className="hidden space-x-8 md:flex">
@@ -23,6 +27,9 @@ const Header = () => {
             </a>
             <a href="#" className="hover:text-hoverTeal">
               contact
+            </a>
+            <a href="/dashboard" className="hover:text-hoverTeal">
+              dashboard
             </a>
           </div>
         </div>
