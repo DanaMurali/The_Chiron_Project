@@ -18,7 +18,9 @@ const LoginTest = () => {
             <button onClick={() => signOut()}>Logout</button>
           </>
         ) : (
-          <button onClick={() => signIn('discord')}>Login with Discord</button>
+          <button onClick={() => signIn('azure-ad')}>
+            Login with Azure AD
+          </button>
         )}
       </div>
     </>
