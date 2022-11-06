@@ -4,7 +4,7 @@ export const mockData = {
   name: 'Jordan',
   role: 'associate software engineer',
   details:
-    'software engineer who is trying to fill enough text to demo a paragraph here',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur autem magni reiciendis nulla illo neque perspiciatis ipsa quia. Inventore ullam delectus mollitia enim illum, dolores dolorem sequi dolorum aliquam ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur autem magni reiciendis nulla illo neque perspiciatis ipsa quia. Inventore ullam delectus mollitia enim illum, dolores dolorem sequi dolorum aliquam ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur autem magni reiciendis nulla illo neque perspiciatis ipsa quia. Inventore ullam delectus mollitia enim illum, dolores dolorem sequi dolorum aliquam ipsa!',
   further: 'further information here',
 };
 const PlayGround = () => {

@@ -16,7 +16,7 @@ const Header = () => {
           </div>
           {/* <!-- Menu Items --> */}
           <div className="hidden space-x-8 md:flex">
-            <a href="#" className="hover:text-hoverTeal">
+            <a href="/" className="hover:text-hoverTeal">
               home
             </a>
             <a href="#" className="hover:text-hoverTeal">
