@@ -15,9 +15,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         {/* <script src="https://cdn.tailwindcss.com"></script> */}
       </Head>
-      <Body>
+      <main>
         <LandingPage />
-      </Body>
+      </main>
     </>
   );
 };
