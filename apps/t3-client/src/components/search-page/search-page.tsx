@@ -10,7 +10,7 @@ const SearchPage = () => {
     setIsTabSelected(tabName);
   };
   return (
-    <div className="flex h-screen  w-full flex-col px-[1.5rem] md:px-[2.5rem]">
+    <div className="flex min-h-screen flex-col px-[1.5rem] md:px-[2.5rem]">
       <h2 className="my-[2.5rem] self-center text-[2rem] font-bold">
         Find A Mentor
       </h2>
