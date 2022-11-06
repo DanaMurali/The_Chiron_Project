@@ -2,13 +2,12 @@ const Header = () => {
   return (
     <>
       {/* <!-- Navbar --> */}
-      <nav className="bg-headerPink  relative mx-auto p-4">
+      <nav className="bg-champagnePink  relative mx-auto p-4">
         {/* <!-- Flex container --> */}
         <div className="flex items-center justify-between">
           {/* <!-- Logo --> */}
           <div className="pt2">
             {/* <!-- <img src="img/logo.svg" alt=""> --> */}
-            <h1 className="">LOGO</h1>
           </div>
           {/* <!-- Menu Items --> */}
           <div className="hidden space-x-8 md:flex">
