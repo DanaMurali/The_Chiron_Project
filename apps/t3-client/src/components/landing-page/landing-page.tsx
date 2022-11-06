@@ -1,9 +1,14 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import Login from '../login/login';
+import Modal from '../modal/modal';
 
 export default function LandingPage() {
   const [showSignInModal, setShowSignInModal] = useState<boolean>(false);
+
+  const handleOnClose = () => {
+    setShowSignInModal(false);
+  };
   const handleSignInClick = () => {
     setShowSignInModal(true);
     console.log('hit');
@@ -12,10 +17,10 @@ export default function LandingPage() {
     <div>
       {/* <!-- Hero Section --> */}
       <section id="hero">
-        <Login
-          showSignInModal={showSignInModal}
-          setShowSignInModal={setShowSignInModal}
-        />
+        <Modal onClose={handleOnClose} open={showSignInModal}>
+          <Login onClose={handleOnClose} />
+        </Modal>
+
         {/* <!-- Flex Container --> */}
         <div className="bg-sectionPink container mx-auto  mt-10 flex flex-col-reverse items-center items-stretch space-y-0 px-6 py-6 md:flex-row md:space-y-0">
           {/* <!-- mt-10 -->
