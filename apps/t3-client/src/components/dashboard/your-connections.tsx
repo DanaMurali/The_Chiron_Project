@@ -1,35 +1,43 @@
 import { useState } from 'react';
-
-import ListColumn from './list-column';
+import MenteesList from './mentees-list';
+import MentorsList from './mentors-list';
 
 const YourConnections = () => {
   const [isMentorsTabSelected, setIsMentorsTabSelected] = useState(true);
 
-  const activeMenteesTab = () => {
-    setIsMentorsTabSelected(false);
+  const activeMentorsTab = () => {
+    if (!isMentorsTabSelected) {
+      setIsMentorsTabSelected(true);
+    }
   };
 
-  const activeMentorsTab = () => {
-    setIsMentorsTabSelected(true);
+  const activeMenteesTab = () => {
+    if (isMentorsTabSelected) {
+      setIsMentorsTabSelected(false);
+    }
   };
 
   return (
-    <section className="mx-auto mb-10 flex min-h-[32.5rem] w-4/5 flex-wrap text-center">
+    <section className="mx-auto mb-10 flex min-h-[13rem] w-4/5 flex-wrap text-center">
       <div className="flex w-full">
         <button
-          onClick={activeMenteesTab}
+          onClick={activeMentorsTab}
           className="bg-mediumGreen max-h-[7.5rem] min-h-[5rem] w-full rounded-t text-2xl"
         >
           Mentors
         </button>
         <button
-          onClick={activeMentorsTab}
+          onClick={activeMenteesTab}
           className="bg-sectionPink  max-h-[7.5rem] min-h-[5rem] w-full rounded-t text-2xl"
         >
           Mentees
         </button>
       </div>
-      {isMentorsTabSelected ? <ListColumn isMentors /> : <ListColumn />}
+      {isMentorsTabSelected ? (
+        <MentorsList hasData={false} />
+      ) : (
+        <MenteesList hasData={false} />
+      )}
     </section>
   );
 };
