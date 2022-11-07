@@ -1,8 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProfileCard = () => {
-  const handleOnClick = () => {
+type Props = {
+  accept?: boolean;
+};
+
+const ProfileCard = ({ accept }: Props) => {
+  const handleRequestOnClick = () => {
+    console.log('request');
+  };
+  const handleAcceptOnClick = () => {
     console.log('request');
   };
   return (
@@ -21,12 +28,21 @@ const ProfileCard = () => {
           <p className="mb-2 text-sm">Senior</p>
         </div>
       </Link>
-      <button
-        className="bg-blackCoral w-[138px] rounded-lg py-1  text-base capitalize text-white"
-        onClick={handleOnClick}
-      >
-        REQUEST
-      </button>
+      {accept ? (
+        <button
+          className="bg-blackCoral w-[138px] rounded-lg py-1  text-base capitalize text-white"
+          onClick={handleAcceptOnClick}
+        >
+          ACCEPT
+        </button>
+      ) : (
+        <button
+          className="bg-blackCoral w-[138px] rounded-lg py-1  text-base capitalize text-white"
+          onClick={handleRequestOnClick}
+        >
+          REQUEST
+        </button>
+      )}
     </div>
   );
 };
