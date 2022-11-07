@@ -1,42 +1,26 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import NavMenu from './nav-menu';
 
 const Header = () => {
   return (
     <>
-      {/* <!-- Navbar --> */}
-      <nav className="bg-headerPink  relative mx-auto p-4">
-        {/* <!-- Flex container --> */}
-        <div className="flex items-center justify-between">
-          {/* <!-- Logo --> */}
-          <div className="pt2">
-            {/* <!-- <img src="img/logo.svg" alt=""> --> */}
-            <h1 className="">
-              <Link href="/">LOGO</Link>
-            </h1>
-          </div>
-          {/* <!-- Menu Items --> */}
-          <div className="hidden space-x-8 md:flex">
-            <a href="/" className="hover:text-hoverTeal">
-              home
-            </a>
-            <a href="#" className="hover:text-hoverTeal">
-              about
-            </a>
-            <a href="#" className="hover:text-hoverTeal">
-              testimonials
-            </a>
-            <a href="#" className="hover:text-hoverTeal">
-              contact
-            </a>
-            <a href="/dashboard" className="hover:text-hoverTeal">
-              dashboard
-            </a>
-          </div>
-        </div>
+      <nav className="bg-headerPink relative mx-auto flex max-h-[4rem] items-center justify-between py-2 px-4">
+        <span>
+          <Link href="/">
+            <Image
+              src="/assets/chiron-crop.png"
+              alt="logo"
+              height={50}
+              width={50}
+            />
+          </Link>
+        </span>
+        <span>
+          <NavMenu />
+        </span>
       </nav>
-      <nav className="bg-blackCoral  relative mx-auto p-2">
-        {/* <!-- just to have two colours for navbar--> */}
-      </nav>
+      <div className="bg-blackCoral relative mx-auto p-2"></div>
     </>
   );
 };
