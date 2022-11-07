@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <>
       {/* <!-- Navbar --> */}
-      <nav className="bg-headerPink  relative mx-auto p-4">
+      <nav className="bg-champagnePink  relative mx-auto p-4">
         {/* <!-- Flex container --> */}
         <div className="flex items-center justify-between">
           {/* <!-- Logo --> */}
