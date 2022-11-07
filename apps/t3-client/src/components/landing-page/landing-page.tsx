@@ -1,11 +1,26 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import Login from '../login/login';
+import Modal from '../modal/modal';
 
 export default function LandingPage() {
+  const [showSignInModal, setShowSignInModal] = useState<boolean>(false);
+
+  const handleOnClose = () => {
+    setShowSignInModal(false);
+  };
+  const handleSignInClick = () => {
+    setShowSignInModal(true);
+    console.log('hit');
+  };
   return (
     <div>
       {/* <!-- Hero Section --> */}
       <section id="hero">
+        <Modal onClose={handleOnClose} open={showSignInModal}>
+          <Login onClose={handleOnClose} />
+        </Modal>
+
         {/* <!-- Flex Container --> */}
         <div className="bg-sectionPink container mx-auto  mt-10 flex flex-col-reverse items-center items-stretch space-y-0 px-6 py-6 md:flex-row md:space-y-0">
           {/* <!-- mt-10 -->
@@ -19,18 +34,15 @@ export default function LandingPage() {
               technologies, career goals and personal development.
             </p>
             <div className="flex justify-center space-x-6 p-6 md:justify-start">
-              <a
-                href="#"
-                className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white"
-              >
+              <button className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white">
                 Sign Up
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
                 className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white"
+                onClick={handleSignInClick}
               >
                 Sign In
-              </a>
+              </button>
             </div>
           </div>
           {/* <!-- Right Item - Image --> */}
