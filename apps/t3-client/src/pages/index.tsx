@@ -5,6 +5,9 @@ import LandingPage from '../components/landing-page/landing-page';
 import { trpc } from '../utils/trpc';
 
 const Home: NextPage = () => {
+  const findMentee = trpc.useQuery(['findMentee.findMentee']);
+  const findMentor = trpc.useQuery(['findMentor.findMentor']);
+
   const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
   console.log(hello);
 

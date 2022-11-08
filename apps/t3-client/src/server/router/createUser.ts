@@ -5,7 +5,7 @@ import { createRouter } from './context';
 // Following this tutorial
 // https://dev.to/nexxeln/build-a-full-stack-app-with-create-t3-app-5e1e
 
-export const userRouter = createRouter()
+export const createUser = createRouter()
   .middleware(async ({ ctx, next }) => {
     // Any queries or mutations after this middleware will
     // raise an error unless there is a current session
@@ -44,17 +44,3 @@ export const userRouter = createRouter()
       }
     },
   });
-
-export const userRouter2 = createRouter().query('getAll', {
-  async resolve({ ctx }) {
-    try {
-      return await ctx.prisma.user.findMany({
-        select: {
-          name: true,
-        },
-      });
-    } catch (error) {
-      console.log('error', error);
-    }
-  },
-});
