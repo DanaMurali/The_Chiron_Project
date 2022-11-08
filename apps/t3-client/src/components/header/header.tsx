@@ -12,6 +12,10 @@ const defaultNavBarData = [
     href: '/',
   },
   {
+    label: 'skills',
+    href: '#skills',
+  },
+  {
     label: 'events',
     href: '#mentoring-events',
   },
