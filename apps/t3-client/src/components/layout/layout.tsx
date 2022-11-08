@@ -9,6 +9,7 @@ type LayoutProps = {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-full">
+      {/*  pass isLoggedIn prop to header to see different nav items */}
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />

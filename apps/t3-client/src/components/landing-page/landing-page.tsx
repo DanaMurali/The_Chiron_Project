@@ -263,7 +263,7 @@ export default function LandingPage() {
       </section>
 
       {/* Be a part of the next big thing */}
-      <section id="testimonials">
+      <section id="contact">
         <div className="bg-sectionPink container mx-auto mt-10 mb-10 px-6 py-6">
           {/* Container to heading */}
           <div className="mx-auto max-w-6xl px-5 text-center">
