@@ -33,9 +33,11 @@ const DashboardPage = ({ newRequest }: Props) => {
       </div>
       <div className="mx-auto my-10 min-h-[7.5rem] w-4/5 text-center ">
         <h2 className="pb-4 text-2xl font-bold">FIND A MENTOR OR MENTEE:</h2>
-        <button className="bg-darkPink h-11 w-[6.5rem] rounded-md text-white">
-          <Link href="/search">Search</Link>
-        </button>
+        <Link href="/search">
+          <button className="bg-darkPink h-11 w-[6.5rem] rounded-md text-white">
+            Search
+          </button>
+        </Link>
       </div>
       <YourConnections />
     </>
