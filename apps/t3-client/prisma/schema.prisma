@@ -7,12 +7,14 @@ generator client {
 
 datasource db {
 
+
     provider = "mysql"
     // NOTE: When using postgresql, mysql or sqlserver, uncomment the @db.text annotations in model Account below
     // Further reading: 
     // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
     // https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
     url      = env("DATABASE_URL")
+
 
 }
 
@@ -74,6 +76,7 @@ model Relationships {
   mentee        User?      @relation("MenteeRelationship", fields: [menteeId], references: [id])
   mentorId      String?    
   menteeId      String?    
+
 }
 
 model Requests {
