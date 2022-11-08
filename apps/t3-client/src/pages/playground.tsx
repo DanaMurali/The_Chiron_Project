@@ -1,14 +1,14 @@
 import DisplayCard from '../components/display-card/display-card';
 
+export const mockData = {
+  name: 'Jordan',
+  role: 'associate software engineer',
+  details:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur autem magni reiciendis nulla illo neque perspiciatis ipsa quia. Inventore ullam delectus mollitia enim illum, dolores dolorem sequi dolorum aliquam ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur autem magni reiciendis nulla illo neque perspiciatis ipsa quia. Inventore ullam delectus mollitia enim illum, dolores dolorem sequi dolorum aliquam ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur autem magni reiciendis nulla illo neque perspiciatis ipsa quia. Inventore ullam delectus mollitia enim illum, dolores dolorem sequi dolorum aliquam ipsa!',
+  further: 'further information here',
+};
 const PlayGround = () => {
   // a sandbox for making components, we can delete when finished building lol
-  const mockData = {
-    name: 'Jordan',
-    role: 'associate software engineer',
-    details:
-      'software engineer who is trying to fill enough text to demo a paragraph here',
-    further: 'further information here',
-  };
 
   return (
     <DisplayCard
