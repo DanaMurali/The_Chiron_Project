@@ -63,7 +63,10 @@ const Header = ({ isLoggedIn }: Props) => {
             </li>
           ))
         : defaultNavBarData.map((i, key) => (
-            <li key={key} className="list-none">
+            <li
+              key={key}
+              className="hover:text-champagnePink md:hover:text-hoverTeal list-none"
+            >
               <a href={i.href}>{i.label}</a>
             </li>
           ))}
@@ -92,7 +95,7 @@ const Header = ({ isLoggedIn }: Props) => {
           />
         </button>
         <ul className={`hidden space-x-8 pr-4 md:flex`}>{data}</ul>
-        
+
         {isBurgerOpen && (
           <div
             className={`bg-blackCoral modal fixed top-0 right-0 z-50 min-w-[15rem] max-w-full overflow-visible rounded px-2 py-2`}
