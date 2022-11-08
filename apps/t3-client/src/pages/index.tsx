@@ -6,6 +6,7 @@ import { trpc } from '../utils/trpc';
 
 const Home: NextPage = () => {
   const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
+  console.log(hello);
 
   return (
     <>
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
         {/* <script src="https://cdn.tailwindcss.com"></script> */}
       </Head>
       <main>
+        <h1>{hello.data?.greeting}</h1>
         <LandingPage />
       </main>
     </>
