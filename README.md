@@ -36,6 +36,7 @@ To format code in schema.prisma, navigate to apps/t3-client on terminal before e
 
 ```npx prisma format``` 
 
+
 Everytime we want to update our schema, this is going to update the schema and migrate it. This command generates the migration file and the TypeScript types.
 
 ```npx prisma migrate dev --name init```
@@ -50,3 +51,4 @@ Pushing any changes to the schema to th db without making migration. This comman
 To access the Prisma studio, you need to navigate to apps/t3-client and run this command in the terminal:
 
 ```npx prisma studio```
+
