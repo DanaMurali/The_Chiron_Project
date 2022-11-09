@@ -15,7 +15,7 @@ const Modal = ({ children, open, onClose }: Props) => {
       onClick={() => onClose()}
     >
       <div
-        className="my-[15%] mx-auto w-full rounded-[8px] border border-solid border-[#888] bg-[#fefefe] md:w-4/5"
+        className="my-[7%] mx-auto w-full rounded-[8px] border border-solid border-[#888] bg-[#fefefe] md:w-4/5"
         onClick={(e) => e.stopPropagation()}
       >
         {children}

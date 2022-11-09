@@ -14,7 +14,7 @@ const ProfileCard = ({ accept }: Props) => {
   };
   return (
     <div className="border-blackCoral m-2 flex h-[343px] w-full w-[318px] flex-col items-center justify-center rounded-xl border-[16px] bg-white transition duration-300 ease-in-out hover:shadow-xl">
-      <Link href="/">
+      <Link href="/user/1">
         <div className="flex flex-col items-center justify-center hover:cursor-pointer">
           <Image
             src="/assets/profile-pic.jpg"
