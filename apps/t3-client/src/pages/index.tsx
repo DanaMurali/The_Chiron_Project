@@ -21,6 +21,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <h1>{hello.data?.greeting}</h1>
+        <h1>{findMentee.data?.join()}</h1>
         <LandingPage />
       </main>
     </>
