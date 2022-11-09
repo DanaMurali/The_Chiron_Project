@@ -1,6 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "t3-client": "apps/t3-client"
+    "chiron": "apps/t3-client"
   }
 }
