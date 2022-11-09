@@ -1,5 +1,5 @@
 {
-  "name": "t3-client",
+  "name": "chiron",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/t3-client",
   "projectType": "application",
@@ -24,17 +24,17 @@
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "t3-client:build",
+        "buildTarget": "chiron:build",
         "dev": true,
         "postcssConfig": "apps/t3-client/postcss.config.js"
       },
       "configurations": {
         "development": {
-          "buildTarget": "t3-client:build:development",
+          "buildTarget": "chiron:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "t3-client:build:production",
+          "buildTarget": "chiron:build:production",
           "dev": false
         }
       }
@@ -42,7 +42,7 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "t3-client:build:production",
+        "buildTarget": "chiron:build:production",
         "postcssConfig": "apps/t3-client/postcss.config.js"
       }
     },
