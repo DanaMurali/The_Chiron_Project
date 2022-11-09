@@ -1,51 +1,94 @@
 # The Chiron Project
 
+## Local Development
+
 ### Prerequisites
 
-- Node.js
-- VS Code
+- Node.js `>= v16.13.2`
+- Pnpm `>= v7.11.0`
 - MySQL
 
 ### Running Locally
 
-To install requirements:
-`pnpm install`
+To install dependencies:
 
-To start server:
-`pnpm start`
-
-The following environment variables are used by the service:
-
+```sh
+pnpm install
 ```
-# Prisma
-DATABASE_URL=file:./db.sqlite
 
-# Next Auth
-NEXTAUTH_SECRET=
-NEXTAUTH_URL=http://localhost:4200/
+Create a `.env` file using the `example.env`
 
-# Next Auth Discord Provider
-DISCORD_CLIENT_ID=
-DISCORD_CLIENT_SECRET=
+- Contact a member of the development team for the necessary environment keys
+- Use the example database URL for local development
+
+To start app:
+
+```sh
+pnpm nx serve chiron
+# or
+pnpm start # shortcut for above command
 ```
+
+This uses the Azure AD provider for Next-Auth
+
+- Contact a member of the dev team to generate a test user to log into the app
 
 ### Prisma
 
-To format code in schema.prisma, navigate to apps/t3-client on terminal before entering in this command:
+To use Prisma commands, first navigate into `apps/t3-client`
 
-`npx prisma format`
+To format code in `schema.prisma`:
 
-Everytime we want to update our schema, this is going to update the schema and migrate it. This command generates the migration file and the TypeScript types.
+```sh
+npx prisma format
+```
 
-`npx prisma migrate dev --name init`
+To access Prisma Studio:
 
-Manually re-generate client.
+```sh
+npx prisma studio
+```
 
-`npx prisma generate`
+When you make a change to the Prisma schema, there are multiple commands available:
 
-Pushing any changes to the schema to th db without making migration. This command pushes the migration file to the database.
-`npx prisma db push`
+```sh
+# (Re-)Generate the Client to update the generated types
+npx prisma generate
+```
 
-To access the Prisma studio, you need to navigate to apps/t3-client and run this command in the terminal:
+```sh
+# Push schema changes to the db without making a migration
+# Used for prototyping db schema changes
+npx prisma db push
+```
 
-`npx prisma studio`
+```sh
+# Make a db migration
+# This 'replays' existing migrations and then adds a new one
+# This will also seed the database unless '--skip-seed' is passed
+npx prisma migrate dev [--name] (--skip-seed)
+```
+
+There are multiple commands to initialize your db:
+
+```sh
+# Reset db and apply migrations
+npx prisma migrate reset (--skip-seed)
+```
+
+```sh
+# Apply migrations to development db
+npx prisma migrate dev (--skip-seed)
+```
+
+```sh
+# Manually seed db
+npx prisma db seed
+```
+
+```sh
+# Apply migrations to a staging or prod environment
+npx prisma migrate deploy
+```
+
+- The seed script can be found in `/prisma/seed.ts`
