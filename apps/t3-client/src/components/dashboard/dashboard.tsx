@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { mockData } from '../../pages/playground';
 import DisplayCard from '../display-card/display-card';
+import Modal from '../modal/modal';
+import RequestModal from '../requests/requests';
 import NewRequest from './new-request';
 import YourConnections from './your-connections';
 
@@ -9,9 +12,18 @@ type Props = {
 };
 
 const DashboardPage = ({ newRequest }: Props) => {
+  const [showRequestModal, setShowRequestModal] = useState(false);
+  const handleOpenNewRequestModal = () => setShowRequestModal(true);
+  const onNewRequestClose = () => setShowRequestModal(false);
+
   return (
     <>
-      {newRequest && <NewRequest />}
+      <Modal onClose={() => setShowRequestModal(false)} open={showRequestModal}>
+        <RequestModal requestNumber={1} onClose={onNewRequestClose} />
+      </Modal>
+      {newRequest && (
+        <NewRequest handleOpenNewRequestModal={handleOpenNewRequestModal} />
+      )}
       <div className={`${newRequest ?? 'mt-10'}`}>
         <DisplayCard
           data={mockData}
