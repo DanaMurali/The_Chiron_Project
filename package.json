@@ -10,6 +10,9 @@
     "postinstall": "prisma generate --schema=./apps/t3-client/prisma/schema.prisma",
     "prisma-db-push": "prisma db push --schema=./apps/t3-client/prisma/schema.prisma"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "prettier --write",
