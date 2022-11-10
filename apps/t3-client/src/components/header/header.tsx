@@ -12,6 +12,10 @@ const defaultNavBarData = [
     href: '/',
   },
   {
+    label: 'skills',
+    href: '#skills',
+  },
+  {
     label: 'events',
     href: '#mentoring-events',
   },
@@ -59,7 +63,9 @@ const Header = ({ isLoggedIn }: Props) => {
               key={key}
               className="hover:text-champagnePink md:hover:text-hoverTeal list-none"
             >
-              <a href={i.href}>{i.label}</a>
+              <a href={i.href} onClick={closeMenu}>
+                {i.label}
+              </a>
             </li>
           ))
         : defaultNavBarData.map((i, key) => (
@@ -67,7 +73,9 @@ const Header = ({ isLoggedIn }: Props) => {
               key={key}
               className="hover:text-champagnePink md:hover:text-hoverTeal list-none"
             >
-              <a href={i.href}>{i.label}</a>
+              <a href={i.href} onClick={closeMenu}>
+                {i.label}
+              </a>
             </li>
           ))}
     </>
