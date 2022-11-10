@@ -7,6 +7,7 @@ import { createUser } from './createUser';
 import { findMentee } from './findMentee';
 import { findMentor } from './findMentor';
 import { protectedExampleRouter } from './protected-example-router';
+import { findUserAllMentor } from './findUserAllMentors';
 
 export const appRouter = createRouter()
   .transformer(superjson)
@@ -15,7 +16,8 @@ export const appRouter = createRouter()
   .merge('createUser.', createUser)
   .merge('findMentee.', findMentee)
   .merge('findMentor.', findMentor)
-  .merge('test.', testRouter);
+  .merge('test.', testRouter)
+  .merge('findUserAllMentor.', findUserAllMentor);
 
 // export type definition of API
 export type AppRouter = typeof appRouter;
