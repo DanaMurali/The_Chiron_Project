@@ -8,7 +8,7 @@ export const declineRequest = createRouter().mutation('declineRequest', {
   }),
   async resolve({ ctx, input }) {
     try {
-      return await ctx.prisma?.requests.delete({
+      return await ctx.prisma?.requests.deleteMany({
         where: {
           AND: [{ mentorId: input.mentorId }, { menteeId: input.menteeId }],
         },

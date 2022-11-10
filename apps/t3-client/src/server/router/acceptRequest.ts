@@ -18,7 +18,7 @@ export const acceptRequest = createRouter().mutation('acceptRequest', {
       console.log('error', error);
     }
     try {
-      const deleteUser = await ctx.prisma?.requests.delete({
+      const deleteUser = await ctx.prisma?.requests.deleteMany({
         where: {
           AND: [{ mentorId: input.mentorId }, { menteeId: input.menteeId }],
         },
