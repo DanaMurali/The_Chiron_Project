@@ -14,10 +14,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Example {
-  id String @id @default(cuid())
-}
-
 // Necessary for Next auth
 model Account {
   id                String  @id @default(cuid())
@@ -46,45 +42,52 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model User {
-  id                 String          @id @default(cuid())
-  name               String?
-  email              String?         @unique
-  emailVerified      DateTime?
-  image              String?
-  accounts           Account[]
-  sessions           Session[]
-  career             String?
-  jobRole            String?
-  biography          String?         @db.Text
-  isMentor           Boolean?
-  isMentee           Boolean?
-  mentorRelationship Relationships[] @relation("MentorRelationship")
-  menteeRelationship Relationships[] @relation("MenteeRelationship")
-  mentorRequest      Requests[]      @relation("MentorRequest")
-  menteeRequest      Requests[]      @relation("MenteeRequest")
-}
-
-model Relationships {
-  id       String  @id @default(cuid())
-  mentor   User?   @relation("MentorRelationship", fields: [mentorId], references: [id])
-  mentee   User?   @relation("MenteeRelationship", fields: [menteeId], references: [id])
-  mentorId String?
-  menteeId String?
-}
-
-model Requests {
-  id       String  @id @default(cuid())
-  mentor   User?   @relation("MentorRequest", fields: [mentorId], references: [id])
-  mentee   User?   @relation("MenteeRequest", fields: [menteeId], references: [id])
-  mentorId String?
-  menteeId String?
-}
-
 model VerificationToken {
   identifier String
   token      String   @unique
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model User {
+  id                  String         @id @default(cuid())
+  name                String?
+  email               String?        @unique
+  emailVerified       DateTime?
+  image               String?
+  accounts            Account[]
+  sessions            Session[]
+  career              String?
+  jobRoleId           String?
+  jobRole             JobRole?       @relation(fields: [jobRoleId], references: [id])
+  biography           String?        @db.Text
+  isMentor            Boolean?
+  isMentee            Boolean?
+  mentorRelationships Relationship[] @relation("MentorRelationship")
+  menteeRelationships Relationship[] @relation("MenteeRelationship")
+  mentorRequests      Request[]      @relation("MentorRequest")
+  menteeRequests      Request[]      @relation("MenteeRequest")
+}
+
+model JobRole {
+  id    String @id @default(cuid())
+  name  String
+  users User[]
+}
+
+model Relationship {
+  id       String  @id @default(cuid())
+  mentorId String?
+  mentor   User?   @relation("MentorRelationship", fields: [mentorId], references: [id])
+  menteeId String?
+  mentee   User?   @relation("MenteeRelationship", fields: [menteeId], references: [id])
+}
+
+model Request {
+  id       String  @id @default(cuid())
+  mentorId String?
+  mentor   User?   @relation("MentorRequest", fields: [mentorId], references: [id])
+  menteeId String?
+  mentee   User?   @relation("MenteeRequest", fields: [menteeId], references: [id])
 }
