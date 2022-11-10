@@ -9,12 +9,20 @@ const Home: NextPage = () => {
   const findMentor = trpc.useQuery(['findMentor.findMentor']);
   const findUser = trpc.useQuery([
     'findUser.findUser',
-    { id: 'clabeedef0000vit8jl7160o6' },
+    { id: 'clabkmp9e0000vi30ajt2pc3k' },
+  ]);
+  const findRequests = trpc.useQuery([
+    'findRequests.findRequests',
+    { mentorId: findUser.data?.id || '' },
+  ]);
+  const findMentorByJobRole = trpc.useQuery([
+    'findMentorByJobRole.findMentorByJobRole',
+    { jobRole: 'Software Engineer' },
   ]);
 
   const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
   console.log(hello);
-  console.log(findUser);
+  console.log(findMentorByJobRole.data);
 
   return (
     <>

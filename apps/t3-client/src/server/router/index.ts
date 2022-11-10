@@ -9,6 +9,12 @@ import { findMentor } from './findMentor';
 import { findUser } from './findUser';
 import { findRequests } from './findRequests';
 import { protectedExampleRouter } from './protected-example-router';
+import { findUserMentees } from './findUserMentees';
+import { findMentorByJobRole } from './findMentorByJobRole';
+import { sendRequest } from './sendRequest';
+import { acceptRequest } from './acceptRequest';
+import { declineRequest } from './declineRequest';
+import { updateUser } from './updateUser';
 
 export const appRouter = createRouter()
   .transformer(superjson)
@@ -19,7 +25,13 @@ export const appRouter = createRouter()
   .merge('findMentor.', findMentor)
   .merge('test.', testRouter)
   .merge('findUser.', findUser)
-  .merge('findRequests.', findRequests);
+  .merge('findRequests.', findRequests)
+  .merge('findUserMentees.', findUserMentees)
+  .merge('findMentorByJobRole.', findMentorByJobRole)
+  .merge('sendRequest.', sendRequest)
+  .merge('acceptRequest.', acceptRequest)
+  .merge('declineRequest', declineRequest)
+  .merge('updateUser', updateUser);
 
 // export type definition of API
 export type AppRouter = typeof appRouter;

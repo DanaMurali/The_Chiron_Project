@@ -29,6 +29,28 @@ async function main() {
       isMentee: true,
     },
   });
+  const christine = await prisma.user.upsert({
+    where: { email: 'christine@chiron.io' },
+    update: {},
+    create: {
+      name: 'Christine',
+      email: 'christine@chiron.io',
+      career: 'HR',
+      jobRole: 'Payroll Assistant ',
+      biography:
+        'Phasellus in ligula sit amet purus elementum venenatis. Aliquam venenatis, justo non fermentum imperdiet, lacus sapien euismod leo, non porttitor ante mi feugiat lacus. Curabitur a ante lobortis sem malesuada scelerisque.',
+      isMentor: false,
+      isMentee: true,
+    },
+  });
+  const request1 = await prisma.requests.upsert({
+    where: {},
+    update: {},
+    create: {
+      mentorId: alice.id,
+      menteeId: bob.id,
+    },
+  });
   console.log({ alice, bob });
 }
 main()
