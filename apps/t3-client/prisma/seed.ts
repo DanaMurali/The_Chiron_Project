@@ -114,26 +114,30 @@ async function main() {
 
   await prisma.request.create({
     data: {
-      menteeId: christine.id,
-      mentorId: wendy.id,
+      type: 'MENTOR',
+      requesterId: christine.id,
+      requesteeId: wendy.id,
     },
   });
   await prisma.request.create({
     data: {
-      menteeId: alice.id,
-      mentorId: wendy.id,
+      type: 'MENTOR',
+      requesterId: alice.id,
+      requesteeId: wendy.id,
     },
   });
   await prisma.request.create({
     data: {
-      menteeId: christine.id,
-      mentorId: dave.id,
+      type: 'MENTEE',
+      requesterId: dave.id,
+      requesteeId: christine.id,
     },
   });
   await prisma.request.create({
     data: {
-      menteeId: bob.id,
-      mentorId: dave.id,
+      type: 'MENTOR',
+      requesterId: bob.id,
+      requesteeId: dave.id,
     },
   });
 
