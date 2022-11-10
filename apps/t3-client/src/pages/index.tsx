@@ -7,9 +7,14 @@ import { trpc } from '../utils/trpc';
 const Home: NextPage = () => {
   const findMentee = trpc.useQuery(['findMentee.findMentee']);
   const findMentor = trpc.useQuery(['findMentor.findMentor']);
+  const findUser = trpc.useQuery([
+    'findUser.findUser',
+    { id: 'clabeedef0000vit8jl7160o6' },
+  ]);
 
   const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
   console.log(hello);
+  console.log(findUser);
 
   return (
     <>
