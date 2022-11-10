@@ -8,7 +8,7 @@ export const findUserAllMentor = createRouter().query('findUserAllMentor', {
   }),
   async resolve({ ctx, input }) {
     try {
-      const mentors = await ctx.prisma.user.findFirstOrThrow({
+      return await ctx.prisma.user.findMany({
         where: {
           id: input.userId,
         },
@@ -32,17 +32,3 @@ export const findUserAllMentor = createRouter().query('findUserAllMentor', {
 // use id to find mentors ids (Relationships)
 // return mentor ids
 // get mentor names and information from user database
-
-// select - to get certain outputs
-
-// try {
-//   return await ctx.prisma.user.findMany({
-//     select: {
-//       isMentor: true,
-//     },
-//   });
-// } catch (error) {
-//   console.log('error', error);
-// }
-
-// logged in user - pass the id
