@@ -7,9 +7,15 @@ export type DisplayCardProps = {
   };
   editButton?: boolean;
   img: string;
+  onEditClick: () => void;
 };
 
-const DisplayCard = ({ data, editButton, img }: DisplayCardProps) => {
+const DisplayCard = ({
+  data,
+  editButton,
+  img,
+  onEditClick,
+}: DisplayCardProps) => {
   const { name, role, details, further } = data;
 
   return (
@@ -31,7 +37,10 @@ const DisplayCard = ({ data, editButton, img }: DisplayCardProps) => {
         </p>
         <p className="mb-2 text-sm sm:text-lg">{further ? further : ''}</p>
         {editButton && (
-          <button className="bg-blackCoral mx-auto h-11 min-w-[6rem] rounded-md text-sm text-white sm:w-[174px]">
+          <button
+            className="bg-blackCoral mx-auto h-11 min-w-[6rem] rounded-md text-sm text-white sm:w-[174px]"
+            onClick={onEditClick}
+          >
             EDIT PROFILE
           </button>
         )}

@@ -28,7 +28,11 @@ const Profile = ({ data, isMentorAlready }: Props) => {
           </button>
         )}
       </div>
-      <DisplayCard data={data} img="https://picsum.photos/1000" />
+      <DisplayCard
+        data={data}
+        img="https://picsum.photos/1000"
+        onEditClick={() => console.log('remove')}
+      />
     </div>
   );
 };
