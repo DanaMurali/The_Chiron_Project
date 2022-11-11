@@ -1,17 +1,69 @@
 import SearchBar from '../search-bar/search-bar';
 import ProfileCard from './profile-card/profile-card';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { trpc } from '../../utils/trpc';
 
 const SearchPage = () => {
   const [isTabSelected, setIsTabSelected] = useState('Mentors');
-  const findMentee = trpc.useQuery(['findMentee.findMentee']);
-  const findMentor = trpc.useQuery(['findMentor.findMentor']);
+  const [mentors, setMentors] = useState<any>();
+  const [mentees, setMentees] = useState<any>();
+  const [searchValue, setSearchValue] = useState('');
+  const { data: findMentee, refetch: refetchFindMentee } = trpc.useQuery([
+    'findMentee.findMentee',
+  ]);
+  const { data: findMentor, refetch: refetchFindMentor } = trpc.useQuery([
+    'findMentor.findMentor',
+  ]);
 
-  const handleTabOnClick = (tabName: 'Mentors' | 'Mentees') => {
+  const {
+    data: mentorSearchResult,
+    isLoading: isMentorSearchLoading,
+    refetch: refetchMentorsByRole,
+  } = trpc.useQuery(
+    ['findMentorsByJobRole.findMentorsByJobRole', { jobRole: searchValue }],
+    { enabled: false }
+  );
+
+  const {
+    data: menteeSearchResult,
+    isLoading: isMenteeSearchLoading,
+    refetch: refetchMenteesByRole,
+  } = trpc.useQuery(
+    ['findMenteesByJobRole.findMenteesByJobRole', { jobRole: searchValue }],
+    { enabled: false }
+  );
+
+  useEffect(() => {
+    setMentors(findMentor);
+    setMentees(findMentee);
+  }, [findMentee, findMentor]);
+
+  useEffect(() => {
+    if (searchValue !== '' && isTabSelected === 'Mentors') {
+      refetchMentorsByRole();
+    } else if (searchValue !== '' && isTabSelected === 'Mentees') {
+      refetchMenteesByRole();
+    }
+  }, [searchValue]);
+
+  useEffect(() => {
+    if (isTabSelected === 'Mentors') {
+      setMentors(mentorSearchResult || []);
+    } else if (isTabSelected === 'Mentees') {
+      setMentees(menteeSearchResult || []);
+    }
+  }, [isMenteeSearchLoading, isMentorSearchLoading]);
+
+  const handleTabOnClick = async (tabName: 'Mentors' | 'Mentees') => {
     setIsTabSelected(tabName);
   };
+
+  const handleOnSearch = (value: string) => {
+    setSearchValue(value);
+    setTimeout(() => setSearchValue(''), 1000);
+  };
+
   return (
     <div className="flex min-h-screen flex-col px-[1.5rem] md:px-[2.5rem]">
       <h2 className="my-[2.5rem] self-center text-[2rem] font-bold">
@@ -40,35 +92,59 @@ const SearchPage = () => {
             Mentees
           </button>
         </div>
-        <SearchBar />
+        <SearchBar handleOnSearch={handleOnSearch} />
       </div>
       <div className="flex flex-row flex-wrap items-center justify-start">
         {isTabSelected === 'Mentors' &&
-          findMentor.data &&
-          findMentor.data.map((mentor) => {
-            return (
-              <div className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start">
-                <ProfileCard
-                  name={mentor?.name || undefined}
-                  jobRole={mentor?.jobRole?.name}
-                  id={mentor?.id}
-                />
-              </div>
-            );
-          })}
+          mentors &&
+          mentors.map(
+            (
+              mentor: {
+                name: any;
+                jobRole: { name: string | undefined };
+                id: string | undefined;
+              },
+              index: number
+            ) => {
+              return (
+                <div
+                  className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start"
+                  key={mentor.id || index}
+                >
+                  <ProfileCard
+                    name={mentor?.name || undefined}
+                    jobRole={mentor?.jobRole?.name}
+                    id={mentor?.id}
+                  />
+                </div>
+              );
+            }
+          )}
         {isTabSelected === 'Mentees' &&
-          findMentee.data &&
-          findMentee.data.map((mentee) => {
-            return (
-              <div className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start">
-                <ProfileCard
-                  name={mentee?.name || undefined}
-                  jobRole={mentee?.jobRole?.name}
-                  id={mentee?.id}
-                />
-              </div>
-            );
-          })}
+          mentees &&
+          mentees.map(
+            (
+              mentee: {
+                name: any;
+                jobRole: { name: string | undefined };
+                id: string | undefined;
+              },
+              index: number
+            ) => {
+              return (
+                <div
+                  className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start"
+                  key={mentee.id || index}
+                >
+                  <ProfileCard
+                    name={mentee?.name || undefined}
+                    jobRole={mentee?.jobRole?.name}
+                    id={mentee?.id}
+                  />
+                </div>
+              );
+            }
+          )}
       </div>
     </div>
   );
