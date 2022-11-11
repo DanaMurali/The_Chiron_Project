@@ -1,25 +1,31 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
-import Login from '../login/login';
-import Modal from '../modal/modal';
+import React from 'react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 export default function LandingPage() {
-  const [showSignInModal, setShowSignInModal] = useState<boolean>(false);
+  // const [showSignInModal, setShowSignInModal] = useState<boolean>(false);
 
-  const handleOnClose = () => {
-    setShowSignInModal(false);
-  };
-  const handleSignInClick = () => {
-    setShowSignInModal(true);
-    console.log('hit');
-  };
+  // const handleOnClose = () => {
+  //   setShowSignInModal(false);
+  // };
+  // const handleSignInClick = () => {
+  //   setShowSignInModal(true);
+  //   console.log('hit');
+  // };
+
+  const { data: session, status } = useSession();
+
+  if (status === 'loading') {
+    return <main>Loading...</main>;
+  }
+
   return (
     <div>
       {/* <!-- Hero Section --> */}
       <section id="hero">
-        <Modal onClose={handleOnClose} open={showSignInModal}>
+        {/* <Modal onClose={handleOnClose} open={showSignInModal}>
           <Login onClose={handleOnClose} />
-        </Modal>
+        </Modal> */}
 
         {/* <!-- Flex Container --> */}
         <div className="bg-sectionPink container mx-auto  mt-10 flex flex-col-reverse items-center items-stretch space-y-0 px-6 py-6 md:flex-row md:space-y-0">
@@ -34,15 +40,26 @@ export default function LandingPage() {
               technologies, career goals and personal development.
             </p>
             <div className="flex justify-center space-x-6 p-6 md:justify-start">
-              <button className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white">
-                Sign Up
-              </button>
-              <button
-                className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white"
-                onClick={handleSignInClick}
-              >
-                Sign In
-              </button>
+              {session ? (
+                <>
+                  <button
+                    className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white"
+                    onClick={() => signOut()}
+                  >
+                    Sign Out
+                  </button>
+                  <button className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white">
+                    Dashboard
+                  </button>
+                </>
+              ) : (
+                <button
+                  className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white"
+                  onClick={() => signIn('azure-ad')}
+                >
+                  Azure Sign In
+                </button>
+              )}
             </div>
           </div>
           {/* <!-- Right Item - Image --> */}
