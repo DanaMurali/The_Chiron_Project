@@ -13,7 +13,9 @@ Often, mentorships within companies occur unintentionally without a formal progr
 
 Our user friendly & accessible prototype ensures that a user can search for potential mentors, view their profile page, send requests, and even become a mentor themself, passing their own unique experience forwards.
 
-![alt text](./assets/microarchitecture.png)
+<p align="center">
+<img src="./apps/t3-client/public/assets/microarchitecture.png"/>
+</p>
 
 ### Local Development
 
