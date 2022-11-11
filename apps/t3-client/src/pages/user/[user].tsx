@@ -1,5 +1,12 @@
+import { useRouter } from 'next/router';
+import Profile from '../../components/profile/profile';
+
 const UserProfile = () => {
-  return <div>this will be a dynamic page</div>;
+  const router = useRouter();
+  const { user } = router.query;
+  console.log(user, '<< user ');
+
+  return <Profile id={user} />;
 };
 
 export default UserProfile;
