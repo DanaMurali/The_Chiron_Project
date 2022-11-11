@@ -60,6 +60,16 @@
       "options": {
         "lintFilePatterns": ["apps/t3-client/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "ts-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "tsc --build --force apps/t3-client/tsconfig.json"
+          }
+        ]
+      }
     }
   },
   "tags": []
