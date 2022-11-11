@@ -32,9 +32,6 @@ const DisplayCard = ({
             ? data.biography
             : 'personal details, experience etc. paragraph  here!'}
         </p>
-        {/* <p className="mb-2 text-sm sm:text-lg">
-          {data.further !== null ? data.further : ''}
-        </p> */}
         {editButton && (
           <button
             className="bg-blackCoral mx-auto h-11 min-w-[6rem] rounded-md text-sm text-white sm:w-[174px]"

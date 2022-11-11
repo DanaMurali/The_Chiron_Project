@@ -1,7 +1,6 @@
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { mockData } from '../../pages/playground';
 import { trpc } from '../../utils/trpc';
 import DisplayCard from '../display-card/display-card';
 import Modal from '../modal/modal';
@@ -44,7 +43,6 @@ const DashboardPage = () => {
       )}
       <div className={`${requests ?? 'mt-10'}`}>
         <DisplayCard
-          data={mockData}
           img="https://picsum.photos/1000"
           editButton
           onEditClick={handleOpenEditModal}
