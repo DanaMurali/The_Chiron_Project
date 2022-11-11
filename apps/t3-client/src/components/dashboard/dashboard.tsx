@@ -29,6 +29,12 @@ const DashboardPage = () => {
     { requesteeId: session?.user?.id || '' },
   ]);
 
+  const data = {
+    name: myProfile?.name || '',
+    jobRole: myProfile?.jobRole?.name || '',
+    biography: myProfile?.biography || '',
+  };
+
   return (
     <>
       <Modal onClose={() => setShowRequestModal(false)} open={showRequestModal}>
@@ -43,13 +49,9 @@ const DashboardPage = () => {
       )}
       <div className={`${requests ?? 'mt-10'}`}>
         <DisplayCard
-          data={{
-            name: myProfile?.name || undefined,
-            jobRole: myProfile?.jobRole?.name || undefined,
-            biography: myProfile?.biography || undefined,
-          }}
+          data={data}
           img="https://picsum.photos/1000"
-          editButton
+   
           onEditClick={handleOpenEditModal}
         />
       </div>
