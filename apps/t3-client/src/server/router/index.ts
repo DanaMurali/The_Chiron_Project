@@ -9,6 +9,7 @@ import { findMentor } from './findMentor';
 import { findUser } from './findUser';
 import { findRequests } from './findRequests';
 import { protectedExampleRouter } from './protected-example-router';
+import { findUserMentors } from './findUserMentors';
 import { findUserMentees } from './findUserMentees';
 import { findMentorByJobRole } from './findMentorByJobRole';
 import { sendRequest } from './sendRequest';
@@ -26,6 +27,7 @@ export const appRouter = createRouter()
   .merge('test.', testRouter)
   .merge('findUser.', findUser)
   .merge('findRequests.', findRequests)
+   .merge('findUserMentors.', findUserMentors)
   .merge('findUserMentees.', findUserMentees)
   .merge('findMentorByJobRole.', findMentorByJobRole)
   .merge('sendRequest.', sendRequest)
