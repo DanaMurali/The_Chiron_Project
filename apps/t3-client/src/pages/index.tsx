@@ -19,8 +19,11 @@ const Home: NextPage = () => {
     'findMentorByJobRole.findMentorByJobRole',
     { jobRole: 'Software Engineer' },
   ]);
-
   console.log('mentors:', findMentor.data);
+  console.log(findRequests.data);
+  const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
+  console.log(hello);
+  console.log(findMentorByJobRole.data);
   return (
     <>
       <Head>
