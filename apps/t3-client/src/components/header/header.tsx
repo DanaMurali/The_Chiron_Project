@@ -13,19 +13,19 @@ const defaultNavBarData = [
   },
   {
     label: 'skills',
-    href: '#skills',
+    href: '/#skills',
   },
   {
     label: 'events',
-    href: '#mentoring-events',
+    href: '/#mentoring-events',
   },
   {
     label: 'testimonials',
-    href: '#testimonials',
+    href: '/#testimonials',
   },
   {
     label: 'contact',
-    href: '#contact',
+    href: '/#contact',
   },
 ];
 
@@ -63,9 +63,9 @@ const Header = ({ isLoggedIn }: Props) => {
               key={key}
               className="hover:text-champagnePink md:hover:text-hoverTeal list-none"
             >
-              <a href={i.href} onClick={closeMenu}>
+              <Link href={i.href} onClick={closeMenu}>
                 {i.label}
-              </a>
+              </Link>
             </li>
           ))
         : defaultNavBarData.map((i, key) => (
@@ -84,7 +84,7 @@ const Header = ({ isLoggedIn }: Props) => {
   return (
     <>
       <nav className="bg-headerPink relative mx-auto flex h-[4rem] items-center justify-between px-1 pt-2 ">
-        <span className="py-2 pl-4 cursor-pointer">
+        <span className="cursor-pointer py-2 pl-4">
           <Link href="/">
             <Image
               src="/assets/chiron-crop.png"
