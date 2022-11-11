@@ -1,6 +1,8 @@
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { mockData } from '../../pages/playground';
+import { trpc } from '../../utils/trpc';
 import DisplayCard from '../display-card/display-card';
 import Modal from '../modal/modal';
 import RequestModal from '../requests/requests';
@@ -8,11 +10,7 @@ import EditProfile from './edit-profile';
 import NewRequest from './new-request';
 import YourConnections from './your-connections';
 
-type Props = {
-  newRequest?: boolean;
-};
-
-const DashboardPage = ({ newRequest }: Props) => {
+const DashboardPage = () => {
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const handleOpenNewRequestModal = () => setShowRequestModal(true);
@@ -20,15 +18,31 @@ const DashboardPage = ({ newRequest }: Props) => {
   const handleOpenEditModal = () => setShowEditModal(true);
   const onEditModalClose = () => setShowEditModal(false);
 
+  const { data: session, status } = useSession();
+
+  const { data: myProfile } = trpc.useQuery([
+    'findUser.findUser',
+    { id: session?.user?.id || '' },
+  ]);
+
+  const { data: requests } = trpc.useQuery([
+    'findRequests.findRequests',
+    { requesteeId: session?.user?.id || '' },
+  ]);
+
   return (
     <>
       <Modal onClose={() => setShowRequestModal(false)} open={showRequestModal}>
-        <RequestModal requestNumber={1} onClose={onNewRequestClose} />
+        <RequestModal
+          requestNumber={requests?.length || 0}
+          onClose={onNewRequestClose}
+          requests={requests}
+        />
       </Modal>
-      {newRequest && (
+      {requests && (
         <NewRequest handleOpenNewRequestModal={handleOpenNewRequestModal} />
       )}
-      <div className={`${newRequest ?? 'mt-10'}`}>
+      <div className={`${requests ?? 'mt-10'}`}>
         <DisplayCard
           data={mockData}
           img="https://picsum.photos/1000"

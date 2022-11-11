@@ -4,12 +4,10 @@ import Image from 'next/image';
 type Props = {
   requestNumber: number;
   onClose: () => void;
+  requests: any;
 };
 
-const RequestModal = ({ requestNumber, onClose }: Props) => {
-  const handleOnClick = () => {
-    console.log('accept');
-  };
+const RequestModal = ({ requestNumber, onClose, requests }: Props) => {
   return (
     <div className="border-mediumGreen flex flex-col items-center justify-center border-[1rem] border-solid bg-white">
       <div className="flex w-full flex-col items-end justify-center">
@@ -35,7 +33,23 @@ const RequestModal = ({ requestNumber, onClose }: Props) => {
         </div>
       </div>
       <div className=" bg-sectionPink flex w-full flex-row flex-wrap justify-center px-[1.5rem] py-4">
-        <ProfileCard accept={true} />
+        {requests &&
+          requests.map(
+            (request: {
+              name: string | undefined;
+              jobRole: string | undefined;
+              id: string | undefined;
+            }) => {
+              return (
+                <ProfileCard
+                  accept={true}
+                  name={request.name}
+                  jobRole={request.jobRole}
+                  id={request.id}
+                />
+              );
+            }
+          )}
       </div>
     </div>
   );
