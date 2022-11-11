@@ -1,10 +1,15 @@
 import { useState } from 'react';
 
-const SearchBar = () => {
+type Props = {
+  handleOnSearch: (value: string) => void;
+};
+
+const SearchBar = ({ handleOnSearch }: Props) => {
   const [searchValue, setSearchValue] = useState('');
 
-  const handleSearchClick = () => {
-    console.log(searchValue);
+  const handleSearchClick = async () => {
+    handleOnSearch(searchValue);
+    setSearchValue('');
   };
   return (
     <div className="flex items-center justify-center">

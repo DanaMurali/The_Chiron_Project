@@ -9,7 +9,6 @@ export const acceptRequest = createRouter().mutation('acceptRequest', {
   async resolve({ ctx, input }) {
     try {
       return await ctx.prisma.relationship.create({
-
         data: {
           mentorId: input.mentorId,
           menteeId: input.menteeId,

@@ -13,8 +13,8 @@ export const findRequests = createRouter().query('findRequests', {
         },
         select: {
           requester: true,
-
-      }})
+        },
+      });
     } catch (error) {
       console.log('error', error);
     }
