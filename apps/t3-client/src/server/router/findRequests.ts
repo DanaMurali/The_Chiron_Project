@@ -3,16 +3,16 @@ import { createRouter } from './context';
 
 export const findRequests = createRouter().query('findRequests', {
   input: z.object({
-    mentorId: z.string(),
+    requesteeId: z.string(),
   }),
   async resolve({ ctx, input }) {
     try {
-      return await ctx.prisma.requests.findMany({
+      return await ctx.prisma.request.findMany({
         where: {
-          mentorId: input.mentorId,
+          requesteeId: input.requesteeId,
         },
         select: {
-          mentee: true,
+          requester: true,
         },
       });
     } catch (error) {

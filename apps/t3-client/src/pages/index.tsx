@@ -13,15 +13,14 @@ const Home: NextPage = () => {
   ]);
   const findRequests = trpc.useQuery([
     'findRequests.findRequests',
-    { mentorId: findUser.data?.id || '' },
+    { mentorId: 'clac8tfvu001aviecv4cbsqsi' },
   ]);
   const findMentorByJobRole = trpc.useQuery([
     'findMentorByJobRole.findMentorByJobRole',
     { jobRole: 'Software Engineer' },
   ]);
 
-  const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
-  console.log(hello);
+  console.log(findRequests.data);
   console.log(findMentorByJobRole.data);
 
   return (
@@ -33,7 +32,6 @@ const Home: NextPage = () => {
         {/* <script src="https://cdn.tailwindcss.com"></script> */}
       </Head>
       <main>
-        <h1>{hello.data?.greeting}</h1>
         <LandingPage />
       </main>
     </>

@@ -9,7 +9,10 @@ export const findMentorByJobRole = createRouter().query('findMentorByJobRole', {
     try {
       return await ctx.prisma.user.findMany({
         where: {
-          jobRole: { contains: input.jobRole },
+          AND: [
+            { isMentor: true },
+            { jobRole: { name: { contains: input.jobRole } } },
+          ],
         },
       });
     } catch (error) {
