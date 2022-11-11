@@ -10,7 +10,7 @@ const Search = () => {
     return <main>Loading...</main>;
   }
 
-  session ? <SearchPage /> : router.push('/');
+  return session ? <SearchPage /> : router.push('/');
 };
 
 export default Search;

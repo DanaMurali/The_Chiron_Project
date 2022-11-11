@@ -11,7 +11,7 @@ const UserProfile = () => {
     return <main>Loading...</main>;
   }
 
-  session ? <Profile id={user} /> : router.push('/');
+  return session ? <Profile id={user} /> : router.push('/');
 };
 
 export default UserProfile;
