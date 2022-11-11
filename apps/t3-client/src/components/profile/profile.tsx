@@ -42,6 +42,12 @@ const Profile = ({ id }: Props) => {
   //   });
   // };
 
+  const data = {
+    name: findUser.data?.name || undefined,
+    jobRole: findUser.data?.jobRole?.name || undefined,
+    biography: findUser.data?.biography || undefined,
+  };
+
   return (
     <div className="mb-10 mt-5">
       <div className="mx-auto my-2 flex min-h-[5rem] w-[10rem] flex-wrap items-center justify-center text-center sm:w-4/5 sm:justify-between">
@@ -61,9 +67,10 @@ const Profile = ({ id }: Props) => {
         )}
       </div>
       <DisplayCard
-        data={findUser.data}
+        data={data}
         img="https://picsum.photos/1000"
         onEditClick={() => console.log('remove')}
+        editButton
       />
     </div>
   );
