@@ -10,6 +10,7 @@ const Home: NextPage = () => {
 
   const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
   console.log(hello);
+  console.log(findMentee);
 
   return (
     <>
@@ -21,7 +22,6 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <h1>{hello.data?.greeting}</h1>
-        <h1>{findMentee.data?.join()}</h1>
         <LandingPage />
       </main>
     </>

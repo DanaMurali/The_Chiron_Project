@@ -52,3 +52,7 @@ To access the Prisma studio, you need to navigate to apps/t3-client and run this
 
 ```npx prisma studio```
 
+To reset database and to seed it with data in seed.tx file:
+
+```npx prisma migrate reset```
+
