@@ -9,7 +9,7 @@ const NewRequest = ({ handleOpenNewRequestModal }: Props) => {
         className="bg-orange min-h-[40px] min-w-[200px] rounded"
         onClick={handleOpenNewRequestModal}
       >
-        <p>You have a new request!</p>
+        <p>View your mentor requests!</p>
       </button>
     </div>
   );

@@ -44,7 +44,11 @@ const DashboardPage = () => {
       )}
       <div className={`${requests ?? 'mt-10'}`}>
         <DisplayCard
-          data={mockData}
+          data={{
+            name: myProfile?.name || undefined,
+            jobRole: myProfile?.jobRole?.name || undefined,
+            biography: myProfile?.biography || undefined,
+          }}
           img="https://picsum.photos/1000"
           editButton
           onEditClick={handleOpenEditModal}

@@ -11,6 +11,9 @@ export const findUser = createRouter().query('findUser', {
         where: {
           id: input.id,
         },
+        include: {
+          jobRole: true,
+        },
       });
     } catch (error) {
       console.log('error', error);
