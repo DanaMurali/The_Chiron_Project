@@ -51,7 +51,7 @@ const DashboardPage = () => {
         <DisplayCard
           data={data}
           img="https://picsum.photos/1000"
-   
+          editButton
           onEditClick={handleOpenEditModal}
         />
       </div>

@@ -70,7 +70,6 @@ const Profile = ({ id }: Props) => {
         data={data}
         img="https://picsum.photos/1000"
         onEditClick={() => console.log('remove')}
-        editButton
       />
     </div>
   );
