@@ -8,7 +8,6 @@ import type { AppType } from 'next/app';
 import type { AppRouter } from '../server/router';
 import type { Session } from 'next-auth';
 import '../styles/globals.css';
-import LandingPage from '../components/landing-page/landing-page';
 import { Layout } from '../components/layout/layout';
 
 const MyApp: AppType<{ session: Session | null }> = ({
@@ -61,11 +60,11 @@ export default withTRPC<AppRouter>({
       //     delete headers?.connection;
       //     return {
       //       ...headers,
-      //       "x-ssr": "1",
+      //       'x-ssr': '1',
       //     };
       //   }
       //   return {};
-      // }
+      // },
     };
   },
   /**

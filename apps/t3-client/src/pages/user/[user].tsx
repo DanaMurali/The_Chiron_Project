@@ -1,11 +1,17 @@
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Profile from '../../components/profile/profile';
 
 const UserProfile = () => {
+  const { data: session, status } = useSession();
   const router = useRouter();
   const { user } = router.query;
 
-  return <Profile id={user} />;
+  if (status === 'loading') {
+    return <main>Loading...</main>;
+  }
+
+  return session ? <Profile id={user} /> : router.push('/');
 };
 
 export default UserProfile;
