@@ -7,7 +7,7 @@
     "start": "nx serve chiron",
     "devStart": "node tmp/script.ts",
     "prepare": "husky install",
-    "postinstall": "prisma generate --schema=./apps/t3-client/prisma/schema.prisma",
+    "postinstall": "prisma generate prisma/schema.prisma",
     "prisma-db-push": "prisma db push --schema=./apps/t3-client/prisma/schema.prisma"
   },
   "prisma": {
