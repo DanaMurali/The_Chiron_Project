@@ -10,7 +10,7 @@ const YourConnections = () => {
 
   const { data: myMentors, refetch: myMentorsRefetch } = trpc.useQuery([
     'findUserMentors.findUserMentors',
-    { menteeId: 'clac8tfv70013viecfqigbtu7' },
+    { menteeId: session?.user?.id || '' },
   ]);
 
   const { data: myMentees, refetch: myMenteesRefetch } = trpc.useQuery([
