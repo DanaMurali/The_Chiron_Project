@@ -1,9 +1,27 @@
-import { useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { useEffect, useState } from 'react';
+import { trpc } from '../../utils/trpc';
 import MenteesList from './mentees-list';
 import MentorsList from './mentors-list';
 
 const YourConnections = () => {
   const [isMentorsTabSelected, setIsMentorsTabSelected] = useState(true);
+  const { data: session, status } = useSession();
+
+  const { data: myMentors, refetch: myMentorsRefetch } = trpc.useQuery([
+    'findUserMentors.findUserMentors',
+    { menteeId: 'clac8tfv70013viecfqigbtu7' },
+  ]);
+
+  const { data: myMentees, refetch: myMenteesRefetch } = trpc.useQuery([
+    'findUserMentees.findUserMentees',
+    { mentorId: session?.user?.id || '' },
+  ]);
+
+  useEffect(() => {
+    myMentorsRefetch();
+    myMenteesRefetch();
+  }, []);
 
   const activeMentorsTab = () => {
     if (!isMentorsTabSelected) {
@@ -34,9 +52,9 @@ const YourConnections = () => {
         </button>
       </div>
       {isMentorsTabSelected ? (
-        <MentorsList hasData={false} />
+        <MentorsList data={myMentors} />
       ) : (
-        <MenteesList hasData={false} />
+        <MenteesList data={myMentees} />
       )}
     </section>
   );

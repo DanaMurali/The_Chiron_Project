@@ -11,7 +11,7 @@ const Dashboard = () => {
     return <main>Loading...</main>;
   }
 
-  session ? <DashboardPage newRequest /> : router.push('/');
+  session ? <DashboardPage /> : router.push('/');
 };
 
 export default Dashboard;

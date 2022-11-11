@@ -9,12 +9,14 @@ import { findMentor } from './findMentor';
 import { findUser } from './findUser';
 import { findRequests } from './findRequests';
 import { protectedExampleRouter } from './protected-example-router';
+import { findMentorsByJobRole } from './findMentorsByJobRole';
+import { findUserMentors } from './findUserMentors';
 import { findUserMentees } from './findUserMentees';
-import { findMentorByJobRole } from './findMentorByJobRole';
 import { sendRequest } from './sendRequest';
 import { acceptRequest } from './acceptRequest';
 import { declineRequest } from './declineRequest';
 import { updateUser } from './updateUser';
+import { findMenteesByJobRole } from './findMenteesByJobRole';
 
 export const appRouter = createRouter()
   .transformer(superjson)
@@ -26,12 +28,14 @@ export const appRouter = createRouter()
   .merge('test.', testRouter)
   .merge('findUser.', findUser)
   .merge('findRequests.', findRequests)
-  .merge('findUserMentees.', findUserMentees)
-  .merge('findMentorByJobRole.', findMentorByJobRole)
+  .merge('findMentorsByJobRole.', findMentorsByJobRole)
   .merge('sendRequest.', sendRequest)
   .merge('acceptRequest.', acceptRequest)
-  .merge('declineRequest', declineRequest)
-  .merge('updateUser', updateUser);
+  .merge('declineRequest.', declineRequest)
+  .merge('updateUser.', updateUser)
+  .merge('findMenteesByJobRole.', findMenteesByJobRole)
+  .merge('findUserMentors.', findUserMentors)
+  .merge('findUserMentees.', findUserMentees);
 
 // export type definition of API
 export type AppRouter = typeof appRouter;

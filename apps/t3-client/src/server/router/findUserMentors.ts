@@ -1,15 +1,15 @@
 import { z } from 'zod';
 import { createRouter } from './context';
 
-export const findUserMentees = createRouter().query('findUserMentees', {
+export const findUserMentors = createRouter().query('findUserMentors', {
   input: z.object({
-    mentorId: z.string(),
+    menteeId: z.string(),
   }),
   async resolve({ ctx, input }) {
     try {
       return await ctx.prisma.relationship.findMany({
         where: {
-          mentorId: input.mentorId,
+          menteeId: input.menteeId,
         },
         select: {
           mentor: {

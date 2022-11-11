@@ -8,6 +8,9 @@ export const findMentor = createRouter().query('findMentor', {
         where: {
           isMentor: true,
         },
+        include: {
+          jobRole: true,
+        },
       });
     } catch (error) {
       console.log('error', error);

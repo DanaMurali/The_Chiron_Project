@@ -1,4 +1,6 @@
-import { FormEvent, useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { FormEvent, useEffect, useState } from 'react';
+import { trpc } from '../../utils/trpc';
 
 type Props = {
   onClose: () => void;
@@ -9,14 +11,32 @@ const EditProfile = ({ onClose }: Props) => {
   const [biographyInput, setBiographyInput] = useState('');
   const [isMentor, setIsMentor] = useState(false);
   const [isMentee, setIsMentee] = useState(false);
+  const [shouldSend, setShouldSend] = useState(false);
+
+  const { data } = useSession();
+
+  const updateUser = trpc.useMutation('updateUser.updateUser');
+
+  useEffect(() => {
+    if (shouldSend === true) {
+      updateUser.mutate({
+        id: 'clac8tfvo0019viecjs6e091r',
+        bio: biographyInput,
+        isMentor: isMentor,
+        isMentee: isMentee,
+      });
+      setShouldSend(false);
+    }
+  }, [shouldSend]);
 
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(roleInput, biographyInput, isMentor, isMentee, 'submitted');
     setRoleInput('');
-    setBiographyInput('');
-    setIsMentor(false);
-    setIsMentee(false);
+    setBiographyInput(biographyInput);
+    setIsMentor(isMentor);
+    setIsMentee(isMentee);
+    setShouldSend(true);
   };
 
   return (
@@ -34,7 +54,7 @@ const EditProfile = ({ onClose }: Props) => {
       </h2>
       <div className="bg-sectionPink w-100% mb-[2rem] flex min-h-[20rem] flex-col items-center justify-center border-2">
         <form onSubmit={(e) => handleOnSubmit(e)}>
-          <div className="mb-2 flex">
+          {/* <div className="mb-2 flex">
             <label
               htmlFor="role"
               className="border-textGrey mr-[1rem] flex w-[11rem] items-center justify-center border bg-white"
@@ -49,7 +69,7 @@ const EditProfile = ({ onClose }: Props) => {
               value={roleInput}
               onChange={(e) => setRoleInput(e.target.value)}
             />
-          </div>
+          </div> */}
           <div className="mb-2 flex">
             <label
               htmlFor="biography"
