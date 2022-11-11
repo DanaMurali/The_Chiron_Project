@@ -7,9 +7,23 @@ import { trpc } from '../utils/trpc';
 const Home: NextPage = () => {
   const findMentee = trpc.useQuery(['findMentee.findMentee']);
   const findMentor = trpc.useQuery(['findMentor.findMentor']);
+  const findUser = trpc.useQuery([
+    'findUser.findUser',
+    { id: 'clabkmp9e0000vi30ajt2pc3k' },
+  ]);
+  const findRequests = trpc.useQuery([
+    'findRequests.findRequests',
+    { mentorId: 'clac8tfvu001aviecv4cbsqsi' },
+  ]);
+  const findMentorByJobRole = trpc.useQuery([
+    'findMentorByJobRole.findMentorByJobRole',
+    { jobRole: 'Software Engineer' },
+  ]);
 
+  console.log(findRequests.data);
   const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
   console.log(hello);
+  console.log(findMentorByJobRole.data);
 
   return (
     <>
@@ -20,7 +34,6 @@ const Home: NextPage = () => {
         {/* <script src="https://cdn.tailwindcss.com"></script> */}
       </Head>
       <main>
-        <h1>{hello.data?.greeting}</h1>
         <LandingPage />
       </main>
     </>

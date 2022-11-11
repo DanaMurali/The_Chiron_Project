@@ -9,14 +9,13 @@ export const mockData = {
 };
 const PlayGround = () => {
   // a sandbox for making components, we can delete when finished building lol
-
-  return (
-    <DisplayCard
-      data={mockData}
-      img="https://i.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o"
-      editButton
-    />
-  );
+  // return (
+  //   <DisplayCard
+  //     data={mockData}
+  //     img="https://i.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o"
+  //     editButton
+  //   />
+  // );
 };
 
 export default PlayGround;
