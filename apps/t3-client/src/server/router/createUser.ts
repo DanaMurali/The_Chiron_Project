@@ -8,9 +8,6 @@ export const createUser = createRouter().mutation('createUser', {
   input: z.object({
     name: z.string(),
     email: z.string(),
-    image: z.string(),
-    career: z.string(),
-    jobRole: z.string(),
     biography: z.string(),
     isMentor: z.boolean(),
     isMentee: z.boolean(),
@@ -21,9 +18,6 @@ export const createUser = createRouter().mutation('createUser', {
         data: {
           name: input.name,
           email: input.email,
-          image: input.image,
-          career: input.career,
-          jobRole: input.jobRole,
           biography: input.biography,
           isMentor: input.isMentor,
           isMentee: input.isMentee,
