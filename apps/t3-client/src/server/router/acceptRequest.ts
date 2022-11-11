@@ -8,7 +8,8 @@ export const acceptRequest = createRouter().mutation('acceptRequest', {
   }),
   async resolve({ ctx, input }) {
     try {
-      return await ctx.prisma.relationships.create({
+      return await ctx.prisma.relationship.create({
+
         data: {
           mentorId: input.mentorId,
           menteeId: input.menteeId,
@@ -18,9 +19,12 @@ export const acceptRequest = createRouter().mutation('acceptRequest', {
       console.log('error', error);
     }
     try {
-      const deleteUser = await ctx.prisma?.requests.deleteMany({
+      const deleteUser = await ctx.prisma?.request.deleteMany({
         where: {
-          AND: [{ mentorId: input.mentorId }, { menteeId: input.menteeId }],
+          AND: [
+            { requesteeId: input.mentorId },
+            { requesterId: input.menteeId },
+          ],
         },
       });
     } catch (error) {

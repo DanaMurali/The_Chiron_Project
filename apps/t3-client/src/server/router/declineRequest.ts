@@ -3,14 +3,17 @@ import { createRouter } from './context';
 
 export const declineRequest = createRouter().mutation('declineRequest', {
   input: z.object({
-    mentorId: z.string(),
-    menteeId: z.string(),
+    requesteeId: z.string(),
+    requesterId: z.string(),
   }),
   async resolve({ ctx, input }) {
     try {
-      return await ctx.prisma?.requests.deleteMany({
+      return await ctx.prisma?.request.deleteMany({
         where: {
-          AND: [{ mentorId: input.mentorId }, { menteeId: input.menteeId }],
+          AND: [
+            { requesteeId: input.requesteeId },
+            { requesterId: input.requesterId },
+          ],
         },
       });
     } catch (error) {

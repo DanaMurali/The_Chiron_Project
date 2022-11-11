@@ -7,7 +7,7 @@ export const findUserMentees = createRouter().query('findUserMentees', {
   }),
   async resolve({ ctx, input }) {
     try {
-      return await ctx.prisma.relationships.findMany({
+      return await ctx.prisma.relationship.findMany({
         where: {
           mentorId: input.mentorId,
         },
