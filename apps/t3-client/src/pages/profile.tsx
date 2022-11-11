@@ -1,9 +1,13 @@
+import { useRouter } from 'next/router';
 import Profile from '../components/profile/profile';
 import { trpc } from '../utils/trpc';
 import { mockData } from './playground';
 
 const ProfilePage = () => {
-  return <Profile id='clacufhtn0017uha9ya5uk8f1' />;
+  const router = useRouter();
+  const { user } = router.query;
+
+  return <Profile id={user} />;
 };
 
 export default ProfilePage;

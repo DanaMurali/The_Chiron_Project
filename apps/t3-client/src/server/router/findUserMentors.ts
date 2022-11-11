@@ -12,7 +12,9 @@ export const findUserMentors = createRouter().query('findUserMentors', {
           menteeId: input.menteeId,
         },
         select: {
-          mentor: true,
+          mentor: {
+            include: { jobRole: true },
+          },
         },
       });
     } catch (error) {

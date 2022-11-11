@@ -1,4 +1,3 @@
-import { SessionStore } from 'next-auth/core/lib/cookie';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -6,7 +5,7 @@ import { trpc } from '../../utils/trpc';
 import DisplayCard from '../display-card/display-card';
 
 type Props = {
-  id: string;
+  id: any;
 };
 
 const Profile = ({ id }: Props) => {
@@ -19,24 +18,29 @@ const Profile = ({ id }: Props) => {
 
   const findUser = trpc.useQuery(['findUser.findUser', { id: id }]);
 
-  const findAMentorOfUser = trpc.useQuery([
-    'findUserMentors.findUserMentors',
-    { menteeId: sessionID },
-  ]);
+  // const findAMentorOfUser = trpc.useQuery([
+  //   'findUserMentors.findUserMentors',
+  //   { menteeId: sessionID },
+  // ]);
 
-  useEffect(() => {
-    if (findAMentorOfUser?.data?.mentor?.name !== undefined) {
-      setIsUsersMentorAlready(true);
-    }
-  }, []);
+  // const idOfProfilePerson = id;
 
-  console.log(
-    findAMentorOfUser?.data?.mentor?.name,
-    '<< find mentors of user1 '
-  );
+  // useEffect(() => {
+  //   if (findAMentorOfUser?.data?.mentor?.name !== undefined) {
+  //     setIsUsersMentorAlready(true);
+  //   }
+  // }, []);
 
-  // session object - id
-  console.log(isUsersMentorAlready, 'state')
+  // const findName = () => {
+  //   return findAMentorOfUser?.data?.forEach((v) => {
+  //     if (v.mentor.id === idOfProfilePerson) {
+  //       const mentorName = v.mentor.name;
+  //       console.log(mentorName);
+  //       return mentorName;
+  //     }
+  //     return v.mentor.name;
+  //   });
+  // };
 
   return (
     <div className="mb-10 mt-5">
@@ -48,12 +52,12 @@ const Profile = ({ id }: Props) => {
         </Link>
         {isUsersMentorAlready ? (
           <div className="bg-orange flex min-h-[40px] min-w-[200px] items-center justify-center rounded text-white">
-           {findAMentorOfUser && findAMentorOfUser?.data?.mentor?.name } is your mentor
+            is your mentor
           </div>
         ) : (
-        <button className="bg-orange h-11 w-[10rem] rounded-md text-sm text-white">
-          request as mentor
-        </button>
+          <button className="bg-orange h-11 w-[10rem] rounded-md text-sm text-white">
+            request as mentor
+          </button>
         )}
       </div>
       <DisplayCard
