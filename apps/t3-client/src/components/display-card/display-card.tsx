@@ -1,8 +1,8 @@
 export type DisplayCardProps = {
   data: {
-    name: string;
-    jobRole: string;
-    biography: string;
+    name?: string;
+    jobRole?: string;
+    biography?: string;
   };
   editButton?: boolean;
   img: string;

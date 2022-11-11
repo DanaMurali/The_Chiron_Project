@@ -32,7 +32,7 @@ export const appRouter = createRouter()
   .merge('sendRequest.', sendRequest)
   .merge('acceptRequest.', acceptRequest)
   .merge('declineRequest.', declineRequest)
-  .merge('updateUser', updateUser)
+  .merge('updateUser.', updateUser)
   .merge('findMenteesByJobRole.', findMenteesByJobRole)
   .merge('findUserMentors.', findUserMentors)
   .merge('findUserMentees.', findUserMentees);

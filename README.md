@@ -1,14 +1,31 @@
-# The Chiron Project
+<p align="center">
+<img src="./apps/t3-client/public/assets/chiron-crop.png" width="39" height="50" />
+</p>
+<h1 align="center">
+The Chiron Project
+</h1>
 
-## Local Development
+### Summary
 
-### Prerequisites
+The Chiron Project is a platform designed to help organisations build mentorship networks, thus enabling employees to exchange knowledge, advice, and support to accelerate both personal and professional capabilities.
+
+Often, mentorships within companies occur unintentionally without a formal program. Our platform aims to bridge this gap. This is essential; in the modern workplace, mentorships across all disciplines play an integral role in an employee’s development, even more so now with the current financial crisis and hybrid working model.
+
+Our user friendly & accessible prototype ensures that a user can search for potential mentors, view their profile page, send requests, and even become a mentor themself, passing their own unique experience forwards.
+
+<p align="center">
+<img src="./apps/t3-client/public/assets/microarchitecture.png"/>
+</p>
+
+### Local Development
+
+#### Prerequisites
 
 - Node.js `>= v16.13.2`
 - Pnpm `>= v7.11.0`
 - MySQL
 
-### Running Locally
+####  Running Locally
 
 To install dependencies:
 
@@ -20,6 +37,16 @@ Create a `.env` file using the `example.env`
 
 - Contact a member of the development team for the necessary environment keys
 - Use the example database URL for local development
+
+
+| Config                 | Description                         |
+| ---------------------- | ----------------------------------- |
+| DATABASE_URL           | Example inside `example.md`         |
+| NEXTAUTH_SECRET        | Encrypt NextAuth.js JWT             |
+| NEXTAUTH_URL           | http://localhost:4200/              |
+| AZURE_AD_CLIENT_ID     | The client ID of App Registration.  |
+| AZURE_AD_CLIENT_SECRET | Client secret for app registration. |
+| AZURE_AD_TENANT_ID     | Azure Active Directory tenant ID.   |
 
 To start app:
 
@@ -90,5 +117,9 @@ npx prisma db seed
 # Apply migrations to a staging or prod environment
 npx prisma migrate deploy
 ```
+
+To reset database and to seed it with data in seed.tx file:
+
+`npx prisma migrate reset`
 
 - The seed script can be found in `/prisma/seed.ts`
