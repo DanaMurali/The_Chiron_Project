@@ -33,8 +33,8 @@ export const appRouter = createRouter()
   .merge('acceptRequest.', acceptRequest)
   .merge('declineRequest', declineRequest)
   .merge('updateUser', updateUser)
-  .merge('findMenteesByJobRole.', findMenteesByJobRole);
-   .merge('findUserMentors.', findUserMentors)
+  .merge('findMenteesByJobRole.', findMenteesByJobRole)
+  .merge('findUserMentors.', findUserMentors)
   .merge('findUserMentees.', findUserMentees);
 
 // export type definition of API
