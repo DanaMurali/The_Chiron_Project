@@ -4,7 +4,6 @@ import { createRouter } from './context';
 export const updateUser = createRouter().mutation('updateUser', {
   input: z.object({
     id: z.string(),
-    jobRole: z.string(),
     bio: z.string(),
     isMentor: z.boolean(),
     isMentee: z.boolean(),
@@ -16,7 +15,6 @@ export const updateUser = createRouter().mutation('updateUser', {
           id: input.id,
         },
         data: {
-          jobRole: input.jobRole,
           biography: input.bio,
           isMentor: input.isMentor,
           isMentee: input.isMentee,
