@@ -51,6 +51,7 @@ const SearchPage = () => {
                 <ProfileCard
                   name={mentor?.name || undefined}
                   jobRole={mentor?.jobRole?.name}
+                  id={mentor?.id}
                 />
               </div>
             );
@@ -63,6 +64,7 @@ const SearchPage = () => {
                 <ProfileCard
                   name={mentee?.name || undefined}
                   jobRole={mentee?.jobRole?.name}
+                  id={mentee?.id}
                 />
               </div>
             );

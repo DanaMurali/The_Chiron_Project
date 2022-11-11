@@ -5,9 +5,10 @@ type Props = {
   accept?: boolean;
   name?: string;
   jobRole?: string;
+  id?: string;
 };
 
-const ProfileCard = ({ accept, name, jobRole }: Props) => {
+const ProfileCard = ({ accept, name, jobRole, id }: Props) => {
   const handleRequestOnClick = () => {
     console.log('request');
   };
@@ -16,7 +17,7 @@ const ProfileCard = ({ accept, name, jobRole }: Props) => {
   };
   return (
     <div className="border-blackCoral m-2 flex h-[343px] w-full w-[318px] flex-col items-center justify-center rounded-xl border-[16px] bg-white transition duration-300 ease-in-out hover:shadow-xl">
-      <Link href="/user/1">
+      <Link href={`/user/${id}`}>
         <div className="flex flex-col items-center justify-center hover:cursor-pointer">
           <Image
             src="/assets/profile-pic.jpg"
