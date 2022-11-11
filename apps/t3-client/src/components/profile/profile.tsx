@@ -46,16 +46,16 @@ const Profile = ({ id }: Props) => {
     <div className="mb-10 mt-5">
       <div className="mx-auto my-2 flex min-h-[5rem] w-[10rem] flex-wrap items-center justify-center text-center sm:w-4/5 sm:justify-between">
         <Link href="/search">
-          <button className="bg-blackCoral mb-5 h-11 w-[10rem] rounded-md text-sm text-white sm:mr-5 sm:mb-0">
+          <button className="bg-blackCoral text-md mb-5 h-11 w-[10rem] rounded-md text-white sm:mr-5 sm:mb-0">
             return to list page
           </button>
         </Link>
         {isUsersMentorAlready ? (
-          <div className="bg-orange flex min-h-[40px] min-w-[200px] items-center justify-center rounded text-white">
+          <div className="bg-orange text-md flex min-h-[40px] min-w-[200px] items-center justify-center rounded text-white">
             is your mentor
           </div>
         ) : (
-          <button className="bg-orange h-11 w-[10rem] rounded-md text-sm text-white">
+          <button className="bg-orange text-md h-11 w-[10rem] rounded-md text-white">
             request as mentor
           </button>
         )}
