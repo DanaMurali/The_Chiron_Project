@@ -2,9 +2,12 @@ import SearchBar from '../search-bar/search-bar';
 import ProfileCard from './profile-card/profile-card';
 
 import { useState } from 'react';
+import { trpc } from '../../utils/trpc';
 
 const SearchPage = () => {
   const [isTabSelected, setIsTabSelected] = useState('Mentors');
+  const findMentee = trpc.useQuery(['findMentee.findMentee']);
+  const findMentor = trpc.useQuery(['findMentor.findMentor']);
 
   const handleTabOnClick = (tabName: 'Mentors' | 'Mentees') => {
     setIsTabSelected(tabName);

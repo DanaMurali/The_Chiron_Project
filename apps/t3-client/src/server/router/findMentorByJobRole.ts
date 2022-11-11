@@ -1,12 +1,15 @@
 import { z } from 'zod';
 import { createRouter } from './context';
 
-export const findMentor = createRouter().query('findMentor', {
-  async resolve({ ctx }) {
+export const findMentorByJobRole = createRouter().query('findMentorByJobRole', {
+  input: z.object({
+    jobRole: z.string(),
+  }),
+  async resolve({ ctx, input }) {
     try {
       return await ctx.prisma.user.findMany({
         where: {
-          isMentor: true,
+          jobRole: { contains: input.jobRole },
         },
       });
     } catch (error) {
