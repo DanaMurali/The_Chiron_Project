@@ -42,8 +42,31 @@ const SearchPage = () => {
         </div>
         <SearchBar />
       </div>
-      <div className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start">
-        <ProfileCard />
+      <div className="flex flex-row flex-wrap items-center justify-start">
+        {isTabSelected === 'Mentors' &&
+          findMentor.data &&
+          findMentor.data.map((mentor) => {
+            return (
+              <div className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start">
+                <ProfileCard
+                  name={mentor?.name || undefined}
+                  jobRole={mentor?.jobRole?.name}
+                />
+              </div>
+            );
+          })}
+        {isTabSelected === 'Mentees' &&
+          findMentee.data &&
+          findMentee.data.map((mentee) => {
+            return (
+              <div className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start">
+                <ProfileCard
+                  name={mentee?.name || undefined}
+                  jobRole={mentee?.jobRole?.name}
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

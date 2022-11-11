@@ -13,16 +13,14 @@ const Home: NextPage = () => {
   ]);
   const findRequests = trpc.useQuery([
     'findRequests.findRequests',
-    { mentorId: 'clac8tfvu001aviecv4cbsqsi' },
+    { requesteeId: 'clac8tfve0015vieciy9dr2k2' },
   ]);
   const findMentorByJobRole = trpc.useQuery([
     'findMentorByJobRole.findMentorByJobRole',
     { jobRole: 'Software Engineer' },
   ]);
 
-  console.log(findRequests.data);
-  console.log(findMentorByJobRole.data);
-
+  console.log('mentors:', findMentor.data);
   return (
     <>
       <Head>

@@ -3,9 +3,11 @@ import Link from 'next/link';
 
 type Props = {
   accept?: boolean;
+  name?: string;
+  jobRole?: string;
 };
 
-const ProfileCard = ({ accept }: Props) => {
+const ProfileCard = ({ accept, name, jobRole }: Props) => {
   const handleRequestOnClick = () => {
     console.log('request');
   };
@@ -21,11 +23,10 @@ const ProfileCard = ({ accept }: Props) => {
             alt="duck in a suit"
             width="142px"
             height="142px"
-            className="rounded-full"
+            className="h-auto max-w-full rounded-full border-none align-middle shadow-lg"
           />
-          <p className="mt-2 mb-2 text-base capitalize ">STEVE MCDUCK</p>
-          <p className="text-sm">Product Manager</p>
-          <p className="mb-2 text-sm">Senior</p>
+          <p className="mt-2 mb-1 text-base capitalize ">{name}</p>
+          <p className="mb-2  text-sm">{jobRole}</p>
         </div>
       </Link>
       {accept ? (
