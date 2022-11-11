@@ -4,25 +4,22 @@ import { trpc } from '../utils/trpc';
 
 const test = () => {
   //   const { data: session, status } = useSession();
-
-  const { data, refetch } = trpc.useQuery(['test.getMentees'], {
-    enabled: false,
-  });
-
-  const handleClick = () => {
-    refetch();
-  };
-
-  const consoleLog = () => {
-    console.log(data);
-  };
-  return (
-    <>
-      <button onClick={handleClick}>Do query</button>
-      <p>{JSON.stringify(data)}</p>
-      <button onClick={consoleLog}>console log</button>
-    </>
-  );
+  // const { data, refetch } = trpc.useQuery(['test.getMentees'], {
+  //   enabled: false,
+  // });
+  // const handleClick = () => {
+  //   refetch();
+  // };
+  // const consoleLog = () => {
+  //   console.log(data);
+  // };
+  // return (
+  //   <>
+  //     <button onClick={handleClick}>Do query</button>
+  //     <p>{JSON.stringify(data)}</p>
+  //     <button onClick={consoleLog}>console log</button>
+  //   </>
+  // );
 };
 
 export default test;
