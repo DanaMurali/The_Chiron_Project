@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 export default function LandingPage() {
   // const [showSignInModal, setShowSignInModal] = useState<boolean>(false);
@@ -48,9 +49,11 @@ export default function LandingPage() {
                   >
                     Sign Out
                   </button>
+                  <Link href='/dashboard'>
                   <button className="bg-blackCoral baseline hover:bg-hoverTeal rounded-lg p-3 px-6 pt-2 text-white">
                     Dashboard
                   </button>
+                  </Link>
                 </>
               ) : (
                 <button

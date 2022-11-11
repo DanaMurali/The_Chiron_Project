@@ -84,7 +84,7 @@ const Header = ({ isLoggedIn }: Props) => {
   return (
     <>
       <nav className="bg-headerPink relative mx-auto flex h-[4rem] items-center justify-between px-1 pt-2 ">
-        <span className="py-2 pl-4">
+        <span className="py-2 pl-4 cursor-pointer">
           <Link href="/">
             <Image
               src="/assets/chiron-crop.png"
