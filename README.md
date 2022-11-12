@@ -5,6 +5,8 @@
 The Chiron Project
 </h1>
 
+## Test
+
 ### Summary
 
 The Chiron Project is a platform designed to help organisations build mentorship networks, thus enabling employees to exchange knowledge, advice, and support to accelerate both personal and professional capabilities.
@@ -25,7 +27,7 @@ Our user friendly & accessible prototype ensures that a user can search for pote
 - Pnpm `>= v7.11.0`
 - MySQL
 
-####  Running Locally
+#### Running Locally
 
 To install dependencies:
 
@@ -37,7 +39,6 @@ Create a `.env` file using the `example.env`
 
 - Contact a member of the development team for the necessary environment keys
 - Use the example database URL for local development
-
 
 | Config                 | Description                         |
 | ---------------------- | ----------------------------------- |
