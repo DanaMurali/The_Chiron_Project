@@ -16,7 +16,7 @@ export const findMenteesByJobRole = createRouter().query(
               { jobRole: { name: { contains: input.jobRole } } },
             ],
           },
-          select: {
+          include: {
             jobRole: true,
           },
         });

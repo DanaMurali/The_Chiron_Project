@@ -18,9 +18,9 @@ const EditProfile = ({ onClose }: Props) => {
   const updateUser = trpc.useMutation('updateUser.updateUser');
 
   useEffect(() => {
-    if (shouldSend === true) {
+    if (data?.user?.id && shouldSend === true) {
       updateUser.mutate({
-        id: 'clac8tfvo0019viecjs6e091r',
+        id: data.user.id,
         bio: biographyInput,
         isMentor: isMentor,
         isMentee: isMentee,

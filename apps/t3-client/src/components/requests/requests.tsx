@@ -35,17 +35,13 @@ const RequestModal = ({ requestNumber, onClose, requests }: Props) => {
       <div className=" bg-sectionPink flex w-full flex-row flex-wrap justify-center px-[1.5rem] py-4">
         {requests &&
           requests.map(
-            (request: {
-              name: string | undefined;
-              jobRole: string | undefined;
-              id: string | undefined;
-            }) => {
+            (request: any) => {
               return (
                 <ProfileCard
                   accept={true}
-                  name={request.name}
-                  jobRole={request.jobRole}
-                  id={request.id}
+                  name={request.requester.name}
+                  jobRole={request.requester.jobRole}
+                  id={request.requester.id}
                 />
               );
             }

@@ -133,7 +133,7 @@ const SearchPage = () => {
             ) => {
               return (
                 <div
-                  className="bg-sectionPink mb-[1rem] flex h-full flex-wrap justify-center md:justify-start"
+                  className="bg-sectionPink mx-auto mb-[1rem] flex h-full flex-wrap justify-center md:justify-start"
                   key={mentee.id || index}
                 >
                   <ProfileCard
