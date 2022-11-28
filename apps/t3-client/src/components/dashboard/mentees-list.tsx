@@ -10,8 +10,8 @@ const MenteesList = ({ data }: Props) => {
       {data && data.length > 0
         ? data.map(({ mentee }: any) => (
             <ProfileCard
-              name={mentee.name}
-              jobRole={mentee.jobRole.id}
+              name={mentee?.name}
+              jobRole={mentee?.jobRole?.id}
               id={mentee.id}
               noButton={true}
               key={mentee.id}

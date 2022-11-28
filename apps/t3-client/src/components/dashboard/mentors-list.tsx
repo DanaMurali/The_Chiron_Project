@@ -11,8 +11,8 @@ const MentorsList = ({ data }: Props) => {
         ? data.map(({ mentor }: any) => {
             return (
               <ProfileCard
-                name={mentor.name}
-                jobRole={mentor.jobRole.name}
+                name={mentor?.name}
+                jobRole={mentor?.jobRole?.name}
                 id={mentor.id}
                 noButton={true}
                 key={mentor.id}
