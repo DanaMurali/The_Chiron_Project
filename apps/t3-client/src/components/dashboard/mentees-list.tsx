@@ -12,9 +12,9 @@ const MenteesList = ({ data }: Props) => {
             <ProfileCard
               name={mentee?.name}
               jobRole={mentee?.jobRole?.id}
-              id={mentee.id}
+              id={mentee?.id}
               noButton={true}
-              key={mentee.id}
+              key={mentee?.id}
             />
           ))
         : 'no mentees found :( '}

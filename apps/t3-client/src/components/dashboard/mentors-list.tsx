@@ -13,9 +13,9 @@ const MentorsList = ({ data }: Props) => {
               <ProfileCard
                 name={mentor?.name}
                 jobRole={mentor?.jobRole?.name}
-                id={mentor.id}
+                id={mentor?.id}
                 noButton={true}
-                key={mentor.id}
+                key={mentor?.id}
               />
             );
           })
