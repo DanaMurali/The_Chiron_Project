@@ -5,13 +5,14 @@ type Props = {
 };
 
 const MenteesList = ({ data }: Props) => {
+  console.log(data);
   return (
     <div className="bg-sectionPink flex min-h-[20rem] min-w-[100%] flex-wrap items-center justify-center rounded-b-md px-2 py-4">
       {data && data.length > 0
         ? data.map(({ mentee }: any) => (
             <ProfileCard
               name={mentee?.name}
-              jobRole={mentee?.jobRole?.id}
+              jobRole={mentee?.jobRole?.name}
               id={mentee?.id}
               noButton={true}
               key={mentee?.id}
